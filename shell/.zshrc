@@ -31,6 +31,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $DOTFILES/shell/.p10k.zsh ]] || source $DOTFILES/shell/.p10k.zsh
 
+# Add custom functions to shell
+source $DOTFILES/shell/functions.zsh
+
 # Autostart tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
