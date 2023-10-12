@@ -21,4 +21,8 @@ ln -s $SCRIPT_DIR/shell/.zshrc ~/.zshrc
 remove_existing ~/.config/nvim
 ln -s $SCRIPT_DIR/nvim ~/.config/nvim
 
+# Link custom NvChad config
+remove_existing $SCRIPT_DIR/nvim/lua/custom
+ln -s $SCRIPT_DIR/nvchad_custom $SCRIPT_DIR/nvim/lua/custom
+
 echo -n "\nDone\n"

@@ -18,6 +18,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ## Download dotfiles and link
 After succesfull setup of all prerequisites, run:
 ```sh
-git clone https://github.com/norberthanderek/dotfiles.git  ~/.dotfiles --depth 1
+git clone https://github.com/norberthanderek/dotfiles.git  ~/.dotfiles --depth 1 --recurse-submodules -j8
 cd ~/.dotfiles && ./link.sh
 ```
