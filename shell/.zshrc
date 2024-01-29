@@ -36,7 +36,12 @@ fi
 # Add custom functions to shell
 source $DOTFILES/shell/functions.zsh
 
-# include hidden files
+# Add individual extentions to shell
+for extention in $DOTFILES/shell/extentions/*.zsh; do
+  source "$extention"
+done
+
+# Include hidden files
 _comp_options+=(globdots)
 zstyle ':completion:*' special-dirs false
 
