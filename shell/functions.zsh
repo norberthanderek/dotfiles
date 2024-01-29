@@ -24,11 +24,15 @@ fast_dir_remove () {
     rm -rf $TEMP_TRASH
 }
 
-wipe_nvim () {
+purge_nvim () {
   dirsToDelete=("$HOME/.cache/nvim" "$HOME/.local/share/nvim" "$HOME/.local/state/nvim"
-                "/usr/local/lib/nvim" "/usr/local/share/nvim" "/usr/share/nvim")
+                "/usr/local/lib/nvim" "/usr/local/share/nvim" "/usr/share/nvim" "$(which nvim)")
 
   sudo rm -rf "${dirsToDelete[@]}"
+}
+
+clear_nvim_swap () {
+  rm -rf ~/.local/state/nvim/swap
 }
 
 kill_detached_tmux () {
