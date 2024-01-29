@@ -21,7 +21,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+## User configuration ##
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -35,6 +35,10 @@ fi
 
 # Add custom functions to shell
 source $DOTFILES/shell/functions.zsh
+
+# include hidden files
+_comp_options+=(globdots)
+zstyle ':completion:*' special-dirs false
 
 # Autostart tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
