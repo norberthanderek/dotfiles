@@ -37,7 +37,7 @@ fi
 source $DOTFILES/shell/functions.zsh
 
 # Add individual extentions to shell
-for extention in $DOTFILES/shell/extentions/*.zsh; do
+for extention in $DOTFILES/shell/extentions/*.zsh(N.); do
   source "$extention"
 done
 
