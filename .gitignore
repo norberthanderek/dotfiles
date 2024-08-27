@@ -1,1 +1,5 @@
+# config
 /shell/extentions/*
+
+# generated
+lazy-lock.json
