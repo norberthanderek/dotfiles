@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Get platform-specific paths
 OS_NAME=$(uname)
@@ -30,6 +31,8 @@ remove_existing () {
 # shell
 remove_existing ~/.tmux.conf
 ln -s "$SCRIPT_DIR/shell/.tmux.conf" ~/.tmux.conf
+remove_existing ~/.wezterm.lua
+ln -s "$SCRIPT_DIR/shell/.wezterm.lua" ~/.wezterm.lua
 remove_existing ~/.zshrc
 ln -s "$SCRIPT_DIR/shell/.zshrc" ~/.zshrc
 
@@ -39,4 +42,4 @@ ln -s "$SCRIPT_DIR/nvim" ~/.config/ # Automatically adds 'nvim'
 remove_existing "$VS_CODE_CONFIG/settings.json"
 ln -s "$SCRIPT_DIR/vscode/settings.json" "$VS_CODE_CONFIG/settings.json"
 
-echo -n "\nDone\n"
+echo "Done"
