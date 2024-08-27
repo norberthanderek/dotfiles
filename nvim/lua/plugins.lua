@@ -2,15 +2,14 @@ local plugins = {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require "plugins.configs.lspconfig"
-            require "custom.configs.lspconfig"
+            require "configs.lspconfig"
         end,
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
         event = "VeryLazy",
         opts = function()
-            return require "custom.configs.null-ls"
+            return require "configs.null-ls"
         end,
     },
     {
