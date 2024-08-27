@@ -39,7 +39,7 @@ vim.opt.undoreload = 1000
 
 -- Enable persistent undo
 vim.opt.undofile = true
-local undo_dir = vim.fn.expand("~/.config/nvim/undo")
+local undo_dir = vim.fn.expand("~/.local/share/nvim/undo")
 vim.opt.undodir = undo_dir
 vim.fn.mkdir(undo_dir, "p")
 
