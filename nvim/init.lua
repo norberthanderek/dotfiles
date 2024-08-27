@@ -1,3 +1,6 @@
+-- Spacebar as the leader
+vim.g.mapleader = " "
+
 -- Check if running inside VS Code
 local in_vscode = vim.fn.exists('g:vscode') == 1
 
@@ -29,5 +32,15 @@ vim.schedule(function()
 end)
 
 vim.opt.clipboard = "unnamedplus"
+
+-- Set undo history to 1000
+vim.opt.undolevels = 1000
+vim.opt.undoreload = 1000
+
+-- Enable persistent undo
+vim.opt.undofile = true
+local undo_dir = vim.fn.expand("~/.config/nvim/undo")
+vim.opt.undodir = undo_dir
+vim.fn.mkdir(undo_dir, "p")
 
 print "NeoVim configuration loaded successfully!"
