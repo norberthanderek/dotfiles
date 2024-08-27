@@ -1,0 +1,15 @@
+{
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.renderWhitespace": "all",
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelZoom": true,
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "workbench.colorTheme": "Bearded Theme Monokai Reversed",
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "svelte.enable-ts-plugin": true,
+    "files.autoSave": "afterDelay",
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua"
+}
