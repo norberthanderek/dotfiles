@@ -6,6 +6,7 @@
     "editor.smoothScrolling": true,
     "editor.mouseWheelZoom": true,
     "editor.fontSize": 14,
+    "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontSize": 14,
     "workbench.colorTheme": "Bearded Theme Monokai Reversed",
     "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
