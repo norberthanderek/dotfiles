@@ -44,3 +44,6 @@ done
 # Include hidden files
 _comp_options+=(globdots)
 zstyle ':completion:*' special-dirs false
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/shell/.p10k.zsh.
+[[ ! -f ~/.dotfiles/shell/.p10k.zsh ]] || source ~/.dotfiles/shell/.p10k.zsh
