@@ -1,9 +1,9 @@
 # dotfiles
 
 ## Prerequisites
-### zsh and tmux
+### zsh and WezTerm
 ```sh
-brew install zsh tmux
+brew install zsh wezterm
 ```
 ### [oh-my-zsh](https://ohmyz.sh/#install)
 ``` sh

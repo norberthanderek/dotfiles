@@ -48,8 +48,10 @@ local plugins = {
     enabled = true,
   },
   {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
+    "numToStr/Navigator.nvim",
+    config = function()
+      require("Navigator").setup()
+    end
   },
 }
 

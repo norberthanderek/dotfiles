@@ -9,11 +9,123 @@ config.font_size = 16
 config.initial_cols = 120
 config.initial_rows = 36
 
-config.enable_tab_bar = false
-config.window_decorations = "RESIZE"
+config.default_cursor_style = "SteadyBar"
 
+config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 10
+
+-- Multiplexer
+config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
+config.keys = {
+    {
+        mods = "LEADER",
+        key = "c",
+        action = wezterm.action.SpawnTab "CurrentPaneDomain",
+    },
+    {
+        mods = "LEADER",
+        key = "x",
+        action = wezterm.action.CloseCurrentPane { confirm = true }
+    },
+    {
+        mods = "LEADER",
+        key = "|",
+        action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }
+    },
+    {
+        mods = "LEADER",
+        key = "-",
+        action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
+    },
+    {
+        mods = "CTRL",
+        key = "b",
+        action = wezterm.action.ActivateTabRelative(-1)
+    },
+    {
+        mods = "CTRL",
+        key = "n",
+        action = wezterm.action.ActivateTabRelative(1)
+    },
+    {
+        mods = "CTRL",
+        key = "h",
+        action = wezterm.action.ActivatePaneDirection "Left"
+    },
+    {
+        mods = "CTRL",
+        key = "j",
+        action = wezterm.action.ActivatePaneDirection "Down"
+    },
+    {
+        mods = "CTRL",
+        key = "k",
+        action = wezterm.action.ActivatePaneDirection "Up"
+    },
+    {
+        mods = "CTRL",
+        key = "l",
+        action = wezterm.action.ActivatePaneDirection "Right"
+    },
+    {
+        mods = "CTRL",
+        key = "LeftArrow",
+        action = wezterm.action.AdjustPaneSize { "Left", 5 }
+    },
+    {
+        mods = "CTRL",
+        key = "RightArrow",
+        action = wezterm.action.AdjustPaneSize { "Right", 5 }
+    },
+    {
+        mods = "CTRL",
+        key = "DownArrow",
+        action = wezterm.action.AdjustPaneSize { "Down", 5 }
+    },
+    {
+        mods = "CTRL",
+        key = "UpArrow",
+        action = wezterm.action.AdjustPaneSize { "Up", 5 }
+    },
+}
+
+for i = 0, 9 do
+    -- leader + number to activate that tab
+    table.insert(config.keys, {
+        key = tostring(i),
+        mods = "LEADER",
+        action = wezterm.action.ActivateTab(i),
+    })
+end
+
+-- Tab bar
+config.hide_tab_bar_if_only_one_tab = false
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+config.tab_and_split_indices_are_zero_based = true
+
+-- Status
+wezterm.on("update-right-status", function(window, _)
+    local SOLID_LEFT_ARROW = ""
+    local ARROW_FOREGROUND = { Foreground = { Color = "#c6a0f6" } }
+    local prefix = ""
+
+    if window:leader_is_active() then
+        prefix = " " .. utf8.char(0x26A1) -- ocean wave
+        SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+    end
+
+    if window:active_tab():tab_id() ~= 0 then
+        ARROW_FOREGROUND = { Foreground = { Color = "#1e2030" } }
+    end -- arrow color based on if tab is first pane
+
+    window:set_left_status(wezterm.format {
+        { Text = prefix },
+        ARROW_FOREGROUND,
+        { Text = SOLID_LEFT_ARROW }
+    })
+end)
 
 config.colors = {
   foreground = "#c6cad7",

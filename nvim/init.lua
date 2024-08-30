@@ -8,6 +8,8 @@ if in_vscode then -- VS Code nvim config
   require('configs-vscode.mappings')
 
 else -- nvim config
+  require "configs.mappings"
+
   -- bootstrap lazy and all plugins
   local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
