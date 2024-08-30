@@ -32,7 +32,7 @@ end
 
 -- Common 
 vim.schedule(function()
-  require("common-mappings")
+  require("common.mappings")
 end)
 
 vim.opt.clipboard = "unnamedplus"
