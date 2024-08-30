@@ -8,7 +8,9 @@ if in_vscode then -- VS Code nvim config
   require('configs-vscode.mappings')
 
 else -- nvim config
-  require "configs.mappings"
+  require("configs.mappings")
+  require("configs.indentation")
+  require("configs.theme").setup()
 
   -- bootstrap lazy and all plugins
   local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -30,7 +32,7 @@ end
 
 -- Common 
 vim.schedule(function()
-  require "common-mappings"
+  require("common-mappings")
 end)
 
 vim.opt.clipboard = "unnamedplus"
