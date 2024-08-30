@@ -118,6 +118,6 @@ ft("css")
     })
 
 -- call setup LAST
-require('guard').setup({
+require("guard").setup({
     fmt_on_save = true,
 })

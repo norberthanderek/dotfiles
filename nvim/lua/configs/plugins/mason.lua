@@ -1,6 +1,6 @@
 local mason = require("mason")
 
-vim.env.PATH = vim.fn.expand('~/.local/share/nvim/mason/bin') .. ':' .. vim.env.PATH
+vim.env.PATH = vim.fn.expand("~/.local/share/nvim/mason/bin") .. ":" .. vim.env.PATH
 
 mason.setup({
     install_root_dir = vim.fn.stdpath("data") .. "/mason",

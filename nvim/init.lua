@@ -2,10 +2,10 @@
 vim.g.mapleader = " "
 
 -- Check if running inside VS Code
-local in_vscode = vim.fn.exists('g:vscode') == 1
+local in_vscode = vim.fn.exists("g:vscode") == 1
 
 if in_vscode then -- VS Code nvim config
-  require('configs-vscode.mappings')
+  require("configs-vscode.mappings")
 
 else -- nvim config
   require("configs.mappings")
