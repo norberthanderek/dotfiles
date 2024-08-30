@@ -6,7 +6,5 @@ mason_lspconfig.setup({
 		"rust_analyzer", -- Rust
 		"pyright", -- Python
 		"lua_ls", -- Lua
-		"tsserver", -- TypeScript, JavaScript
-		"svelte", -- Svelte
 	},
 })

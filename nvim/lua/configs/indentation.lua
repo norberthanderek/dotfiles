@@ -1,6 +1,6 @@
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 
 local function set_indent_for_filetype(filetype, indent_size)
 	vim.api.nvim_create_autocmd("FileType", {

@@ -40,6 +40,9 @@ function M.setup()
 	vim.wo.relativenumber = true
 	vim.wo.signcolumn = "no"
 
+	vim.o.list = true
+	vim.o.listchars = "tab:>-,trail:~,extends:>,precedes:<,space:·"
+
 	vim.cmd("highlight clear")
 	if vim.fn.exists("syntax_on") then
 		vim.cmd("syntax reset")
