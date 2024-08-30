@@ -12,3 +12,15 @@ for _, server in ipairs(servers) do
 		end,
 	})
 end
+
+-- Overrides
+
+lspconfig.lua_ls.setup({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	}
+})
