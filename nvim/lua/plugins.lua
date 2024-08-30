@@ -2,25 +2,25 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("configs.lspconfig")
+      require("configs.plugins.lspconfig")
     end,
   },
   {
     "williamboman/mason.nvim",
     config = function()
-      require("configs.mason")
+      require("configs.plugins.mason")
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require("configs.lspconfig-mason")
+      require("configs.plugins.lspconfig-mason")
     end,
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     config = function()
-      require('configs.mason-tool-installer')
+      require("configs.plugins.mason-tool-installer")
     end,
   },
   {
@@ -32,14 +32,14 @@ local plugins = {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
-      require("configs.guard")
+      require("configs.plugins.guard")
     end,
   },
   {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     build = ':TSUpdate',
     config = function()
-      require('configs.treesitter')
+      require("configs.plugins.treesitter")
     end
   },
   {
