@@ -13,11 +13,12 @@
         "editor.tabSize": 2
     },
     "[lua]": {
-        "editor.tabSize": 2,
+        "editor.tabSize": 2
     },
     "terminal.integrated.fontSize": 14,
     "workbench.colorTheme": "Bearded Theme Monokai Reversed",
     "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "window.titleBarStyle": "custom",
     "svelte.enable-ts-plugin": true,
     "files.autoSave": "afterDelay",
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
