@@ -19,5 +19,6 @@
     "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     "svelte.enable-ts-plugin": true,
     "files.autoSave": "afterDelay",
-    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua"
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+    "explorer.confirmDragAndDrop": false
 }
