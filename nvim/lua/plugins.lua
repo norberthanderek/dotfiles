@@ -54,12 +54,6 @@ local plugins = {
     lazy = false,
     enabled = true,
   },
-  {
-    "numToStr/Navigator.nvim",
-    config = function()
-      require("Navigator").setup()
-    end
-  },
 }
 
 return plugins
