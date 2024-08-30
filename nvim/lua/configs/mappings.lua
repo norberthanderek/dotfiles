@@ -1,6 +1,8 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- Remap `Ctrl+Shift+[` and `...+]` to move between tabs in VS Code
-map('n', '<C-S-[>', ':call VSCodeNotify("workbench.action.previousEditor")<CR>', opts)
-map('n', '<C-S-]>', ':call VSCodeNotify("workbench.action.nextEditor")<CR>', opts)
+-- Navigator support (WezTerm & Tmux)
+map('n', '<C-h>', '<cmd>NavigatorLeft<CR>', opts)
+map('n', '<C-l>', '<cmd>NavigatorRight<CR>', opts)
+map('n', '<C-j>', '<cmd>NavigatorDown<CR>', opts)
+map('n', '<C-k>', '<cmd>NavigatorUp<CR>', opts)
