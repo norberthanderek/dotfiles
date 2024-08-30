@@ -88,6 +88,16 @@ config.keys = {
 		key = "UpArrow",
 		action = wezterm.action.AdjustPaneSize({ "Up", 10 }),
 	},
+	{
+		mods = 'LEADER',
+		key = 'f',
+		action = wezterm.action.ToggleFullScreen,
+	},
+	{
+		mods = 'LEADER',
+		key = 'q',
+		action = wezterm.action.QuitApplication,
+	},
 }
 
 for i = 0, 9 do
@@ -108,7 +118,7 @@ config.tab_and_split_indices_are_zero_based = true
 -- Status
 wezterm.on("update-right-status", function(window, _)
 	local SOLID_LEFT_ARROW = ""
-	local ARROW_FOREGROUND = { Foreground = { Color = "#c6a0f6" } }
+	local ARROW_FOREGROUND = { Foreground = { Color = "#c6cad7" } }
 	local prefix = ""
 
 	if window:leader_is_active() then
