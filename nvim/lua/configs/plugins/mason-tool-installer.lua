@@ -4,10 +4,8 @@ mason_installer.setup({
 	ensure_installed = {
 		-- "black",         install globally
 		-- "clang-format",  install globally
-		"eslint",
 		-- "flake8",        install globally
 		"luacheck",
-		"prettier",
 		-- "rustfmt",       install globally via rustup
 		"stylelint",
 		"stylua",

@@ -1,6 +1,6 @@
 local lspconfig = require("lspconfig")
 
-local servers = { "clangd", "rust_analyzer", "pyright", "tsserver", "lua_ls" }
+local servers = { "clangd", "rust_analyzer", "pyright", "lua_ls" }
 
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
