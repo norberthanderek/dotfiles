@@ -12,6 +12,9 @@ DOTFILES=$HOME/.dotfiles
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Add rust
+export PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -47,3 +50,11 @@ zstyle ':completion:*' special-dirs false
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/shell/.p10k.zsh.
 [[ ! -f ~/.dotfiles/shell/.p10k.zsh ]] || source ~/.dotfiles/shell/.p10k.zsh
+
+# Source NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Source Rust env
+[ -s "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"

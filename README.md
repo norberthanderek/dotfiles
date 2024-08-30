@@ -3,7 +3,7 @@
 ## Prerequisites
 ### zsh and tmux
 ```sh
-<package manager install> zsh tmux
+brew install zsh tmux
 ```
 ### [oh-my-zsh](https://ohmyz.sh/#install)
 ``` sh
@@ -14,6 +14,25 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 ### [nvim](https://github.com/neovim/neovim/wiki/Building-Neovim)
+
+### [rust](https://www.rust-lang.org/tools/install)
+
+### [node/npm](https://nodejs.org/en/download/package-manager)
+
+### python3/pip
+```sh
+curl https://bootstrap.pypa.io/get-pip.py | python3
+```
+
+### lua/rocks
+```sh
+brew install lua luarocks
+```
+
+### Dependencies
+```sh
+brew install black clang-format flake8 llvm
+```
 
 ## Download dotfiles and link
 After succesfull setup of all prerequisites, run:
