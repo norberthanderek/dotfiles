@@ -67,8 +67,6 @@ local plugins = {
 	},
 	{
 		"pocco81/auto-save.nvim",
-		lazy = false,
-		enabled = true,
 	},
 }
 
