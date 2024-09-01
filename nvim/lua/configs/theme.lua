@@ -41,7 +41,8 @@ function M.setup()
 	vim.wo.signcolumn = "no"
 
 	vim.o.list = true
-	vim.o.listchars = "tab:>-,trail:~,extends:>,precedes:<,space:·"
+	vim.o.listchars = "tab:→ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨"
+	vim.o.showbreak = "↪"
 
 	vim.cmd("highlight clear")
 	if vim.fn.exists("syntax_on") then
@@ -78,6 +79,8 @@ function M.setup()
 	vim.cmd("highlight IncSearch guifg=" .. colors.background .. " guibg=" .. colors.yellow)
 	vim.cmd("highlight VisualNOS guifg=" .. colors.bright_white .. " guibg=" .. colors.visual)
 	vim.cmd("highlight NonText guifg=" .. colors.bright_black)
+
+	vim.api.nvim_set_hl(0, "NonText", { fg = colors.background })
 end
 
 return M
