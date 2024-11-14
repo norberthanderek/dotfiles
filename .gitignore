@@ -1,5 +1,6 @@
 # config
-/shell/extentions/*
+!shell/extensions/README.md
+shell/extentions/*
 
 # generated
 lazy-lock.json
