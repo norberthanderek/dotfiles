@@ -41,5 +41,7 @@ remove_existing ~/.config/nvim
 ln -s "$SCRIPT_DIR/nvim" ~/.config/ # Automatically adds 'nvim'
 remove_existing "$VS_CODE_CONFIG/settings.json"
 ln -s "$SCRIPT_DIR/vscode/settings.json" "$VS_CODE_CONFIG/settings.json"
+remove_existing "$VS_CODE_CONFIG/keybindings.json"
+ln -s "$SCRIPT_DIR/vscode/keybindings.json" "$VS_CODE_CONFIG/keybindings.json"
 
 echo "Done"
