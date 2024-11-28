@@ -9,14 +9,18 @@ nvim_tree.setup({
     update_root = false,
   },
   filters = { dotfiles = false },
+  git = {
+    ignore = false,
+  },
   view = {
     width = 30,
+    adaptive_size = true,
     preserve_window_proportions = true,
   },
   renderer = {
     root_folder_label = false,
     highlight_git = true,
-    indent_markers = { enable = true },
+    indent_markers = { enable = false },
     icons = {
       glyphs = {
         default = "󰈚",
