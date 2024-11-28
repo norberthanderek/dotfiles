@@ -32,15 +32,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```sh
 curl https://bootstrap.pypa.io/get-pip.py | python3
 ```
-
-### lua/rocks
+### NeoVim Dependencies
 ```sh
-brew install lua luarocks
-```
-
-### Dependencies
-```sh
-brew install black clang-format flake8 llvm
+./nvim/install_dependencies.sh
 ```
 
 ## Download dotfiles and link them
