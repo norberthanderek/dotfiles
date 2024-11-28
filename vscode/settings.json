@@ -3,7 +3,7 @@
         "asvetliakov.vscode-neovim": 1
     },
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
-    "vscode-neovim.ctrlKeysForNormalMode": [],
+    "vscode-neovim.ctrlKeysForNormalMode": ["r","q"],
     "vscode-neovim.ctrlKeysForInsertMode": [],
     "editor.renderWhitespace": "all",
     "editor.smoothScrolling": true,
@@ -12,6 +12,9 @@
     "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
     "editor.insertSpaces": false,
     "editor.tabSize": 4,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
     "[javascript]": {
         "editor.tabSize": 2
     },
@@ -19,6 +22,7 @@
         "editor.tabSize": 2
     },
     "terminal.integrated.fontSize": 14,
+    "terminal.integrated.scrollback": 3000,
     "workbench.colorTheme": "Bearded Theme Monokai Reversed",
     "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     "window.titleBarStyle": "custom",
