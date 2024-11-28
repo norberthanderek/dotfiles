@@ -44,9 +44,9 @@ ft("lua"):fmt({
 	stdin = true,
 })
 
-require("guard").setup({
-	fmt_on_save = false,
-})
+vim.g.guard_config = {
+  fmt_on_save = false,
+}
 
 local keymap_opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>fm", ":GuardFmt<CR>", keymap_opts)
