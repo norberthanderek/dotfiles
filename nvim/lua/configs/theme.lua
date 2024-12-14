@@ -31,6 +31,8 @@ M.colors = {
   tabline_fg = "#98a2b5",
   inactive_tab_bg = "#171921",
   inactive_tab_fg = "#4c526b",
+
+  whitespace = "#1d262f",
 }
 
 function M.setup()
@@ -40,47 +42,46 @@ function M.setup()
   vim.wo.relativenumber = true
   vim.wo.signcolumn = "no"
 
-  vim.o.list = true
-  vim.o.listchars = "tab:→ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨"
-  vim.o.showbreak = "↪"
+  vim.opt.list = true
+  vim.opt.listchars = "tab:→ ,eol:↲,space:•,trail:~,extends:⟩,precedes:⟨"
+  vim.opt.showbreak = "↪"
 
   vim.cmd("highlight clear")
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
   end
-  vim.o.background = "dark"
-  vim.o.termguicolors = true
+  vim.opt.background = "dark"
+  vim.opt.termguicolors = true
 
   vim.g.colors_name = "Bearded Monokai Reversed"
 
-  vim.cmd("highlight Normal guifg=" .. colors.foreground .. " guibg=" .. colors.background)
-  vim.cmd("highlight Cursor guifg=" .. colors.cursor_fg .. " guibg=" .. colors.cursor_bg)
-  vim.cmd("highlight Visual guifg=" .. colors.selection_fg .. " guibg=" .. colors.selection_bg)
-  vim.cmd("highlight LineNr guifg=" .. colors.bright_black)
-  vim.cmd("highlight StatusLine guifg=" .. colors.foreground .. " guibg=" .. colors.tabline_bg)
-  vim.cmd("highlight StatusLineNC guifg=" .. colors.inactive_tab_fg .. " guibg=" .. colors.inactive_tab_bg)
-  vim.cmd("highlight TabLine guifg=" .. colors.inactive_tab_fg .. " guibg=" .. colors.inactive_tab_bg)
-  vim.cmd("highlight TabLineSel guifg=" .. colors.tabline_fg .. " guibg=" .. colors.tabline_bg)
-  vim.cmd("highlight TabLineFill guibg=" .. colors.tabline_bg)
+  vim.api.nvim_set_hl(0, "Normal", { fg = colors.foreground, bg = colors.background })
+  vim.api.nvim_set_hl(0, "Cursor", { fg = colors.cursor_fg, bg = colors.cursor_bg })
+  vim.api.nvim_set_hl(0, "Visual", { fg = colors.selection_fg, bg = colors.selection_bg })
+  vim.api.nvim_set_hl(0, "LineNr", { fg = colors.bright_black })
+  vim.api.nvim_set_hl(0, "StatusLine", { fg = colors.foreground, bg = colors.tabline_bg })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { fg = colors.inactive_tab_fg, bg = colors.inactive_tab_bg })
+  vim.api.nvim_set_hl(0, "TabLine", { fg = colors.inactive_tab_fg, bg = colors.inactive_tab_bg })
+  vim.api.nvim_set_hl(0, "TabLineSel", { fg = colors.tabline_fg, bg = colors.tabline_bg })
+  vim.api.nvim_set_hl(0, "TabLineFill", { bg = colors.tabline_bg })
 
-  vim.cmd("highlight Comment guifg=" .. colors.bright_black)
-  vim.cmd("highlight Constant guifg=" .. colors.red)
-  vim.cmd("highlight String guifg=" .. colors.green)
-  vim.cmd("highlight Identifier guifg=" .. colors.blue)
-  vim.cmd("highlight Statement guifg=" .. colors.yellow)
-  vim.cmd("highlight PreProc guifg=" .. colors.magenta)
-  vim.cmd("highlight Type guifg=" .. colors.cyan)
-  vim.cmd("highlight Special guifg=" .. colors.bright_red)
-  vim.cmd("highlight Underlined guifg=" .. colors.blue)
-  vim.cmd("highlight Todo guifg=" .. colors.magenta)
-  vim.cmd("highlight Error guifg=" .. colors.bright_red .. " guibg=" .. colors.background)
-  vim.cmd("highlight WarningMsg guifg=" .. colors.yellow)
-  vim.cmd("highlight Search guifg=" .. colors.bright_white .. " guibg=" .. colors.visual)
-  vim.cmd("highlight IncSearch guifg=" .. colors.background .. " guibg=" .. colors.yellow)
-  vim.cmd("highlight VisualNOS guifg=" .. colors.bright_white .. " guibg=" .. colors.visual)
-  vim.cmd("highlight NonText guifg=" .. colors.bright_black)
-
+  vim.api.nvim_set_hl(0, "Comment", { fg = colors.bright_black })
+  vim.api.nvim_set_hl(0, "Constant", { fg = colors.red })
+  vim.api.nvim_set_hl(0, "String", { fg = colors.green })
+  vim.api.nvim_set_hl(0, "Identifier", { fg = colors.blue })
+  vim.api.nvim_set_hl(0, "Statement", { fg = colors.yellow })
+  vim.api.nvim_set_hl(0, "PreProc", { fg = colors.magenta })
+  vim.api.nvim_set_hl(0, "Type", { fg = colors.cyan })
+  vim.api.nvim_set_hl(0, "Special", { fg = colors.bright_red })
+  vim.api.nvim_set_hl(0, "Underlined", { fg = colors.blue })
+  vim.api.nvim_set_hl(0, "Todo", { fg = colors.magenta })
+  vim.api.nvim_set_hl(0, "Error", { fg = colors.bright_red, bg = colors.background })
+  vim.api.nvim_set_hl(0, "WarningMsg", { fg = colors.yellow })
+  vim.api.nvim_set_hl(0, "Search", { fg = colors.bright_white, bg = colors.visual })
+  vim.api.nvim_set_hl(0, "IncSearch", { fg = colors.background, bg = colors.yellow })
+  vim.api.nvim_set_hl(0, "VisualNOS", { fg = colors.bright_white, bg = colors.visual })
   vim.api.nvim_set_hl(0, "NonText", { fg = colors.background })
+  vim.api.nvim_set_hl(0, "Whitespace", { fg = colors.whitespace })
 end
 
 return M
