@@ -25,16 +25,14 @@ else -- nvim config
 
   vim.opt.rtp:prepend(lazypath)
 
-  local lazy_config = require("configs.plugins.lazy")
-
   require("lazy").setup({
     { import = "plugins" },
-  }, lazy_config)
+  }, {})
 end
 
 --[[
   Common config
-]]--
+]]
 
 vim.schedule(function()
   require("common.mappings")
@@ -52,4 +50,5 @@ local undo_dir = vim.fn.expand("~/.local/share/nvim/undo")
 vim.opt.undodir = undo_dir
 vim.fn.mkdir(undo_dir, "p")
 
-print("NeoVim configuration loaded successfully!")
+-- Time (ms) after which the CursorHold autocommand is triggered
+vim.opt.updatetime = 750

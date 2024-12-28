@@ -1,7 +1,11 @@
+-- Enable timeout for mappings
+vim.opt.timeout = true
+vim.opt.timeoutlen = 2500 -- (ms)
+
 local keymap_opts = { noremap = true, silent = true }
 
--- Reload neovim config
-vim.keymap.set("n", "<leader>rc", ":source ~/.config/nvim/init.lua <CR>", keymap_opts)
+-- Map Enter key in normal mode to clear search highlights
+vim.keymap.set("n", "<CR>", ":noh<CR><CR>", keymap_opts)
 
 -- Remap `Ctrl+s` to save the current buffer
 vim.keymap.set("n", "<C-s>", ":w<CR>", keymap_opts)

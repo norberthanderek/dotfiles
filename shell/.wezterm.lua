@@ -91,13 +91,13 @@ config.keys = {
     action = wezterm.action.AdjustPaneSize({ "Up", 10 }),
   },
   {
-    mods = 'LEADER',
-    key = 'f',
+    mods = "LEADER",
+    key = "f",
     action = wezterm.action.ToggleFullScreen,
   },
   {
-    mods = 'LEADER',
-    key = 'q',
+    mods = "LEADER",
+    key = "q",
     action = wezterm.action.QuitApplication,
   },
 }
