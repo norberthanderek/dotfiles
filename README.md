@@ -24,8 +24,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ### [nvim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
-### [rust](https://www.rust-lang.org/tools/install)
-
 ### [node/npm](https://nodejs.org/en/download/package-manager)
 
 ### python3/pip

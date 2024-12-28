@@ -32,13 +32,13 @@ nvim_tree.setup({
           symlink = "",
         },
         git = {
-          unstaged = "U",
-          staged = "S",
-          unmerged = "M",
-          renamed = "R",
-          untracked = "N",
-          deleted = "D",
-          ignored = "I",
+          unstaged = "◆",
+          staged = "■",
+          unmerged = "",
+          renamed = "→",
+          untracked = "△",
+          deleted = "-",
+          ignored = " ",
         },
       },
       git_placement = "after",
@@ -47,5 +47,4 @@ nvim_tree.setup({
 })
 
 local keymap_opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", keymap_opts)

@@ -4,3 +4,4 @@ shell/extentions/*
 
 # generated
 lazy-lock.json
+.luarc.json

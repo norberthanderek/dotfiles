@@ -1,6 +1,12 @@
 local plugins = {
+  --[[
+        LSP
+  ]]
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "saghen/blink.cmp",
+    },
     config = function()
       require("configs.plugins.lspconfig")
     end,
@@ -43,6 +49,15 @@ local plugins = {
     end,
   },
   {
+    "nvim-treesitter/playground",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+  --[[
+        Navigation
+  ]]
+  {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -58,15 +73,70 @@ local plugins = {
       require("configs.plugins.telescope")
     end,
   },
+  --[[
+        Theming
+  ]]
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("lualine").setup()
+      require("configs.plugins.lualine")
     end,
   },
   {
+    "utilyre/barbecue.nvim",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("configs.plugins.barbecue")
+    end,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("configs.plugins.gitsigns")
+    end,
+  },
+  {
+    "uga-rosa/ccc.nvim",
+    config = function()
+      require("configs.plugins.ccc")
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    priority = 1000,
+    config = function()
+      require("configs.plugins.catppuccin")
+    end,
+  },
+  --[[
+        Helpers
+  ]]
+  {
     "pocco81/auto-save.nvim",
+  },
+  --[[
+        AI / Completion
+  ]]
+  {
+    "github/copilot.vim",
+  },
+  {
+    "saghen/blink.cmp",
+    version = "v0.*",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+    opts = {
+      keymap = { preset = "default" },
+      appearance = {
+        use_nvim_cmp_as_default = true,
+        nerd_font_variant = "mono",
+      },
+    },
   },
 }
 

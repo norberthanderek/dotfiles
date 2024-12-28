@@ -13,7 +13,7 @@ else
     echo "Unknown OS: $OS_NAME"
     exit 1
 fi
-
+# /homw/username/.config/Code/User
 SCRIPT=$(readlink -f $0)
 SCRIPT_DIR=`dirname $SCRIPT`
 
