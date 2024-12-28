@@ -5,6 +5,7 @@ mason_installer.setup({
     -- "black",         install globally
     -- "clang-format",  install globally
     -- "flake8",        install globally
+    "codelldb",
     "luacheck",
     -- "rustfmt",       install globally via rustup
     "stylelint",
