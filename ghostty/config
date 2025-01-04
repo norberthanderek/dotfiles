@@ -1,0 +1,30 @@
+shell-integration = zsh
+confirm-close-surface = false
+
+font-size = 16
+font-family = JetBrainsMono Nerd Font
+
+window-theme = dark
+background             = "#12141A"
+foreground             = "#C6CAD7"
+selection-background   = "#676B80"
+selection-foreground   = "#2F313D"
+cursor-color           = "#A9AEC1"
+cursor-text            = "#1D1E29"
+
+palette =  0=#282a3a
+palette =  1=#FF4462
+palette =  2=#A0D370
+palette =  3=#EED97A
+palette =  4=#77DCE7
+palette =  5=#E98EE1
+palette =  6=#72DDBD
+palette =  7=#F5B8AB
+palette =  8=#696d77
+palette =  9=#F95F85
+palette = 10=#FC8EAC
+palette = 11=#FC9060
+palette = 12=#7280f8
+palette = 13=#A596E8
+palette = 14=#87CEEB
+palette = 15=#FA7AF0
