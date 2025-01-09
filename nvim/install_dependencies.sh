@@ -60,6 +60,10 @@ main() {
     install_packages "$PACKAGE_MANAGER"
 
     echo "Installing dependencies not related to: $PACKAGE_MANAGER"
+    echo -e "${GREEN}rustfmt${NC}"
+    rustup update
+    rustup component add rustfmt
+
     echo -e "${GREEN}luacheck${NC}"
     sudo luarocks install luacheck
 }
