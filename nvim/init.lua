@@ -9,11 +9,11 @@ vim.g.mapleader = " "
 local in_vscode = vim.fn.exists("g:vscode") == 1
 
 if in_vscode then -- VS Code nvim config
-  require("configs-vscode.mappings")
+  require("config-vscode.mappings")
 else -- nvim config
-  require("configs.mappings")
-  require("configs.indentation")
-  require("configs.theme").setup()
+  require("config.mappings")
+  require("config.indentation")
+  require("config.theme").setup()
 
   -- bootstrap lazy and all plugins
   local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -26,8 +26,13 @@ else -- nvim config
   vim.opt.rtp:prepend(lazypath)
 
   require("lazy").setup({
-    { import = "plugins" },
-  }, {})
+    spec = {
+      { import = "plugins" },
+    },
+    change_detection = {
+      enabled = false,
+    },
+  })
 end
 
 --[[

@@ -2,6 +2,10 @@
 !shell/extensions/README.md
 shell/extentions/*
 
+# local nvim spell checkers
+nvim/spell/
+
 # generated
 lazy-lock.json
 .luarc.json
+.DS_Store

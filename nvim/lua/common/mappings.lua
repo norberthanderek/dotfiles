@@ -5,7 +5,7 @@ vim.opt.timeoutlen = 2500 -- (ms)
 local keymap_opts = { noremap = true, silent = true }
 
 -- Map Enter key in normal mode to clear search highlights
-vim.keymap.set("n", "<CR>", ":noh<CR><CR>", keymap_opts)
+vim.keymap.set("n", "<Esc>", ":noh<CR><CR>", keymap_opts)
 
 -- Remap `Ctrl+s` to save the current buffer
 vim.keymap.set("n", "<C-s>", ":w<CR>", keymap_opts)
