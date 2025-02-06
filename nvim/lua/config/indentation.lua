@@ -10,7 +10,7 @@ vim.opt.wrap = false
 
 local function set_indent_for_filetype(
   filetype,
-  indent_size, --[[optional]]
+  indent_size,
   expandtab
 )
   vim.api.nvim_create_autocmd("FileType", {
@@ -26,3 +26,5 @@ end
 set_indent_for_filetype("lua", 2)
 set_indent_for_filetype("javascript", 2)
 set_indent_for_filetype("typescript", 2)
+set_indent_for_filetype("svelte", 2)
+set_indent_for_filetype("css", 2)

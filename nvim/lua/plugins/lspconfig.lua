@@ -8,6 +8,7 @@ local function config()
     "lua_ls", -- Lua
     "svelte", -- Svelte
     "ts_ls", -- TypeScript
+    "gopls", -- GO
     "omnisharp", -- C#
     "dockerls", -- Docker
     "html", -- HTML

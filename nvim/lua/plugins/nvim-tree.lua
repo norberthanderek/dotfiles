@@ -48,7 +48,8 @@ local function config()
   })
 
   local keymap_opts = { noremap = true, silent = true }
-  vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", keymap_opts)
+  vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", keymap_opts)
+  vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", keymap_opts)
 end
 
 return {
