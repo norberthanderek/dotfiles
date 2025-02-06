@@ -4,7 +4,7 @@ return {
     event = "InsertEnter",
     config = function()
       require("copilot").setup({
-        suggestion = { enabled = false, auto_trigger = true },
+        suggestion = { enabled = false },
         panel = { enabled = false },
       })
     end,
@@ -13,28 +13,28 @@ return {
     "giuxtaposition/blink-cmp-copilot",
   },
   {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+  },
+  {
     "saghen/blink.cmp",
     version = "v0.*",
     dependencies = {
-      "rafamadriz/friendly-snippets",
-      {
-        "giuxtaposition/blink-cmp-copilot",
-      },
+      { "L3MON4D3/LuaSnip" },
+      { "giuxtaposition/blink-cmp-copilot" },
     },
     opts = {
       keymap = {
         preset = "default",
-        ["<Esc>"] = { "cancel", "fallback" },
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
         ["<Tab>"] = { "accept", "fallback" },
-        ["<CR>"] = { "accept", "fallback" },
-        cmdline = {
-          ["<Esc>"] = { "cancel", "fallback" },
-          ["<Tab>"] = { "accept", "fallback" },
-        },
       },
       completion = {
         documentation = { auto_show = true, auto_show_delay_ms = 100 },
-        ghost_text = { enabled = true },
         menu = {
           draw = {
             columns = { { "label", "label_description", gap = 1 }, { "kind" }, { "kind_icon" } },

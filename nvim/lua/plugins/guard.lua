@@ -9,8 +9,6 @@ local function config()
   if is_executable("clang-format") and is_executable("clang-tidy") then
     ft("cpp,hpp,h,c"):fmt({
       cmd = "clang-format",
-      args = { "--assume-filename=%:p" },
-      stdin = true,
     }):lint({
       cmd = "clang-tidy",
       args = { "--quiet", "--", "%:p" },
@@ -80,65 +78,25 @@ local function config()
   end
 
   -- Shell
-  if is_executable("shfmt") and is_executable("shellcheck") then
+  if is_executable("shfmt") then
     ft("sh,zsh"):fmt({
       cmd = "shfmt",
       args = { "-i", "2" },
-      stdin = true,
-    }):lint({
-      cmd = "shellcheck",
-      args = { "--format", "json", "-" },
       stdin = true,
     })
   end
 
   if is_executable("prettier") then
     -- JavaScript & TypeScript
-    if is_executable("eslint") then
-      ft("javascript,typescript"):fmt({
-        cmd = "prettier",
-        args = { "--stdin-filepath", "%:p" },
-        stdin = true,
-      }):lint({
-        cmd = "eslint",
-        args = { "--stdin-filename", "%:p", "--format", "json" },
-        stdin = true,
-      })
-    end
+    ft("javascript,typescript,svelte"):fmt("prettier")
     -- Markup
-    ft("html"):fmt({
-      cmd = "prettier",
-      args = { "--stdin-filepath", "%:p" },
-      stdin = true,
-    })
-    ft("css,scss"):fmt({
-      cmd = "prettier",
-      args = { "--stdin-filepath", "%:p" },
-      stdin = true,
-    })
+    ft("html"):fmt("prettier")
+    ft("css,scss"):fmt("prettier")
     -- Markdown
-    ft("markdown"):fmt({
-      cmd = "prettier",
-      args = { "--stdin-filepath", "%:p" },
-      stdin = true,
-    })
-    ft("yaml,yml"):fmt({
-      cmd = "prettier",
-      args = { "--stdin-filepath", "%:p" },
-      stdin = true,
-    })
+    ft("markdown"):fmt("prettier")
+    ft("yaml,yml"):fmt("prettier")
     -- JSON
-    if is_executable("jq") then
-      ft("json"):fmt({
-        cmd = "prettier",
-        args = { "--stdin-filepath", "%:p" },
-        stdin = true,
-      }):lint({
-        cmd = "jq",
-        args = { "." },
-        stdin = true,
-      })
-    end
+    ft("json"):fmt("prettier")
   end
 
   vim.g.guard_config = {
