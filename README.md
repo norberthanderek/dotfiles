@@ -1,9 +1,9 @@
 # dotfiles
 
 ## Prerequisites
-### zsh and WezTerm
+### zsh and ghostty 👻 
 ```sh
-brew install zsh wezterm
+brew install zsh ghostty
 ```
 
 ### [oh-my-zsh](https://ohmyz.sh/#install)
@@ -28,10 +28,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ### [node/npm](https://nodejs.org/en/download/package-manager)
 
+### golang
+
 ### python3/pip
-```sh
-curl https://bootstrap.pypa.io/get-pip.py | python3
-```
+
 ### NeoVim Dependencies
 ```sh
 ./nvim/install_dependencies.sh
