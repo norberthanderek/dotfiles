@@ -12,12 +12,12 @@
         "<C-h>": false
     },
     "vim.useSystemClipboard": true,
+    "files.autoSave": "afterDelay",
     "editor.renderWhitespace": "all",
     "editor.smoothScrolling": true,
     "editor.mouseWheelZoom": true,
     "editor.fontSize": 14,
     "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-    "editor.insertSpaces": false,
     "editor.tabSize": 4,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
@@ -33,7 +33,7 @@
     "workbench.colorTheme": "Bearded Theme Monokai Reversed",
     "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     "window.titleBarStyle": "custom",
+    "explorer.confirmDragAndDrop": false,
     "svelte.enable-ts-plugin": true,
-    "files.autoSave": "afterDelay",
-    "explorer.confirmDragAndDrop": false
+    "cmake.showOptionsMovedNotification": false
 }
