@@ -1,0 +1,4 @@
+sidebar.revamp true
+sidebar.verticalTabs true
+
+browser.tabs.loadBookmarksInTabs true
