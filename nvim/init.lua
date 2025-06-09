@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 local in_vscode = vim.fn.exists("g:vscode") == 1
 
 if in_vscode then -- VS Code nvim config
-  require("config-vscode.mappings")
+  require("config.vscode.mappings")
 else -- nvim config
   require("config.mappings")
   require("config.indentation")
