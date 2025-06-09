@@ -26,7 +26,7 @@
         "**/*_templ.txt": true
     },
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.scrollback": 3000,
+    "terminal.integrated.scrollback": 5000,
     "workbench.colorTheme": "Bearded Theme Monokai Reversed",
     "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
     "window.titleBarStyle": "custom",
