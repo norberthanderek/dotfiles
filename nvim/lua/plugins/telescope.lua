@@ -22,6 +22,11 @@ local function config()
         n = { ["q"] = require("telescope.actions").close },
       },
     },
+    pickers = {
+      find_files = {
+        hidden = true,
+      }
+    },
     extensions_list = { "themes", "terms" },
     extensions = {},
   })
