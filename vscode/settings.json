@@ -5,13 +5,6 @@
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
     "vscode-neovim.ctrlKeysForNormalMode": ["r","q"],
     "vscode-neovim.ctrlKeysForInsertMode": [],
-    "vim.handleKeys": {
-        "<C-p>": false,
-        "<C-a>": false,
-        "<C-f>": false,
-        "<C-h>": false
-    },
-    "vim.useSystemClipboard": true,
     "files.autoSave": "afterDelay",
     "editor.renderWhitespace": "all",
     "editor.smoothScrolling": true,
