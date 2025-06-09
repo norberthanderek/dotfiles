@@ -6,3 +6,6 @@ vim.keymap.set("n", "<leader>rc", ":source ~/.config/nvim/init.lua <CR>", keymap
 -- Remap Tab and Shift+Tab to move between tabs in VS Code
 vim.keymap.set("n", "<Tab>", ':call VSCodeNotify("workbench.action.nextEditor")<CR>', keymap_opts)
 vim.keymap.set("n", "<S-Tab>", ':call VSCodeNotify("workbench.action.previousEditor")<CR>', keymap_opts)
+
+-- Format document
+vim.keymap.set("n", "<leader>fm", ':call VSCodeNotify("editor.action.formatDocument")<CR>', keymap_opts)
