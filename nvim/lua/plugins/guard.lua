@@ -99,6 +99,22 @@ local function config()
     ft("json"):fmt("prettier")
   end
 
+  if is_executable("gofmt") then
+    ft("go"):fmt({
+      cmd = "gofmt",
+      args = { "-s" },
+      stdin = true,
+    })
+  end
+
+  if is_executable("templ") then
+    ft("templ"):fmt({
+      cmd = "templ",
+      args = { "fmt" },
+      stdin = true,
+    })
+  end
+
   vim.g.guard_config = {
     fmt_on_save = false,
   }

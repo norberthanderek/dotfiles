@@ -22,11 +22,15 @@
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    "[javascript]": {
-        "editor.tabSize": 2
+    "[go]": {
+        "editor.insertSpaces": false
     },
-    "[lua]": {
-        "editor.tabSize": 2
+    "[templ]": {
+        "editor.insertSpaces": false
+    },
+    "files.exclude": {
+        "**/*_templ.go": true,
+        "**/*_templ.txt": true
     },
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.scrollback": 3000,
