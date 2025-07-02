@@ -1,4 +1,5 @@
 sidebar.revamp true
+sidebar.revamp.round-content-area true
 sidebar.verticalTabs true
 
 browser.tabs.loadBookmarksInTabs true
