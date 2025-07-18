@@ -1,6 +1,6 @@
 # config
-!shell/extensions/README.md
-shell/extentions/*
+shell/*/extensions/*
+!shell/*/extensions/README.md
 
 # local nvim spell checkers
 nvim/spell/
