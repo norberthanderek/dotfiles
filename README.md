@@ -33,6 +33,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ### python3/pip
 
 ### NeoVim Dependencies
+Unix only
 ```sh
 ./nvim/install_dependencies.sh
 ```
@@ -40,11 +41,24 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ## Download dotfiles and link them
 After succesfull setup of all prerequisites, run:
 ```sh
-git clone git@github.com:norberthanderek/dotfiles.git  ~/.dotfiles --depth 1 --recurse-submodules -j8
-cd ~/.dotfiles && ./link.sh
+git clone git@github.com:norberthanderek/dotfiles.git $HOME/.dotfiles --depth 1
+cd $HOME/.dotfiles
+```
+
+## Link configurations
+
+### Unix
+```ps1
+# Unix shells
+./link.sh
+# Powershell (as Administrator)
+.\link.ps1
 ```
 
 ## Install VSCode extentions
-```sh
+```ps1
+# Unix shells
 cat vscode/extensions.txt | xargs -n 1 code --install-extension
+# Powershell
+Get-Content vscode\extensions.txt | ForEach-Object { code --install-extension $_ }
 ```

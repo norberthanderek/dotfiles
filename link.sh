@@ -13,9 +13,8 @@ else
     echo "Unknown OS: $OS_NAME"
     exit 1
 fi
-# /homw/username/.config/Code/User
-SCRIPT=$(readlink -f $0)
-SCRIPT_DIR=`dirname $SCRIPT`
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 remove_existing() {
   # If it's a symlink - remove
@@ -40,7 +39,7 @@ create_symlink "$SCRIPT_DIR/ghostty" ~/.config/ # Automatically adds 'ghostty' a
 
 # Shell
 remove_existing ~/.zshrc
-create_symlink "$SCRIPT_DIR/shell/.zshrc" ~/.zshrc
+create_symlink "$SCRIPT_DIR/shell/zsh/.zshrc" ~/.zshrc
 
 # editors
 remove_existing ~/.config/nvim

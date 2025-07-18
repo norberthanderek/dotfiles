@@ -31,13 +31,13 @@ else
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $DOTFILES/shell/.p10k.zsh ]] || source $DOTFILES/shell/.p10k.zsh
+[[ ! -f $DOTFILES/shell/zsh/.p10k.zsh ]] || source $DOTFILES/shell/zsh/.p10k.zsh
 
 # Add custom functions to shell
-source $DOTFILES/shell/functions.zsh
+source $DOTFILES/shell/zsh/functions.zsh
 
 # Add individual extentions to shell
-for extention in $DOTFILES/shell/extentions/*.zsh(N.); do
+for extention in $DOTFILES/shell/zsh/extentions/*.zsh(N.); do
   source "$extention"
 done
 
@@ -45,8 +45,8 @@ done
 _comp_options+=(globdots)
 zstyle ':completion:*' special-dirs false
 
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/shell/.p10k.zsh.
-[[ ! -f ~/.dotfiles/shell/.p10k.zsh ]] || source ~/.dotfiles/shell/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/shell/zsh/.p10k.zsh.
+[[ ! -f ~/.dotfiles/shell/zsh/.p10k.zsh ]] || source ~/.dotfiles/shell/zsh/.p10k.zsh
 
 # Source NVM
 export NVM_DIR="$HOME/.nvm"

@@ -2,6 +2,7 @@
 
 Populate it with local shell scripts and variables that are meant to be auto-included and ignored by git
 
-## Example Scripts
+## Example scripts
 
-- `tools.zsh`: local functionality
+- `aliases.zsh`: local aliases
+- `functions.zsh`: local functions
