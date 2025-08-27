@@ -19,6 +19,7 @@ local function config()
       "lua",
       "vim",
       "cmake",
+      "gitcommit",
       "dockerfile",
       "bash",
     },
