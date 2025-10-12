@@ -36,9 +36,9 @@ fi
 # Add custom functions to shell
 source $DOTFILES/shell/zsh/functions.zsh
 
-# Add individual extentions to shell
-for extention in $DOTFILES/shell/zsh/extentions/*.zsh(N.); do
-  source "$extention"
+# Add individual extensions to shell
+for extension in $DOTFILES/shell/zsh/extensions/*.zsh(N.); do
+  source "$extension"
 done
 
 # Include hidden files
