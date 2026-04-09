@@ -17,14 +17,14 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 remove_existing() {
-  # If it's a symlink - remove
-  if [ -L "$1" ]; then
-    rm "$1"
-  fi
-  # If it's a file or a directory - rename
-  if [ -f "$1" ] || [ -d "$1" ]; then
-    mv "$1" "$1.old"
-  fi
+    # If it's a symlink - remove
+    if [ -L "$1" ]; then
+        rm "$1"
+    fi
+    # If it's a file or a directory - rename
+    if [ -f "$1" ] || [ -d "$1" ]; then
+        mv "$1" "$1.old"
+    fi
 }
 
 create_symlink() {

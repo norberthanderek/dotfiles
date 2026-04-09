@@ -1,17 +1,9 @@
 local function config()
   local mason_installer = require("mason-tool-installer")
+  local mason_profiles = require("config.mason_profiles")
 
   mason_installer.setup({
-    ensure_installed = {
-      -- "black",         install globally
-      -- "clang-format",  install globally
-      -- "flake8",        install globally
-      "codelldb",
-      "luacheck",
-      -- "rustfmt",       install globally via rustup
-      "stylelint",
-      "stylua",
-    },
+    ensure_installed = mason_profiles.ensure_installed("tools"),
     auto_update = true,
     run_on_start = true,
   })

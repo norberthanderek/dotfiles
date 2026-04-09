@@ -39,14 +39,14 @@ show_contents() {
     }
 
     local file_list
-    if git -C "$root" rev-parse --git-dir > /dev/null 2>&1; then
+    if git -C "$root" rev-parse --git-dir >/dev/null 2>&1; then
         file_list=$(git -C "$root" ls-files --cached --others --exclude-standard | sed "s|^|$root/|")
     else
         file_list=$(find "$root" -type f 2>/dev/null)
     fi
 
     echo "$file_list" | while IFS= read -r file; do
-        grep -qI . "$file" 2>/dev/null || continue  # text files only
+        grep -qI . "$file" 2>/dev/null || continue # text files only
         printf '\n======== %s ========\n' "$file"
         cat "$file"
     done
