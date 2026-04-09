@@ -4,6 +4,8 @@ shell/*/extensions/*
 
 # local nvim spell checkers
 nvim/spell/
+nvim/lua/config/local/*
+!nvim/lua/config/local/README.md
 
 # generated
 lazy-lock.json

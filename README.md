@@ -1,53 +1,95 @@
 # dotfiles
 
 ## Prerequisites
-### zsh and ghostty 👻 
+
+### Common
+- [neovim](https://neovim.io/doc/install/)
+- [rust / rustup](https://rustup.rs/)
+- [node / npm](https://nodejs.org/en/download)
+- python3 + pip
+- tree-sitter cli
+  ```sh
+  npm install -g tree-sitter-cli
+  ```
+
+## Unix
+
+<details>
+<summary>Show Unix-specific setup</summary>
+
+#### Shell
 ```sh
 brew install zsh ghostty
 ```
 
-### [oh-my-zsh](https://ohmyz.sh/#install)
-``` sh
+#### oh-my-zsh
+```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### [p10k](https://github.com/romkatv/powerlevel10k#installation)
+#### powerlevel10k
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-### zsh plugins
+#### zsh plugins
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-### [nvim](https://github.com/neovim/neovim/wiki/Building-Neovim)
+</details>
 
-### [rust](https://www.rust-lang.org/tools/install)
+## Windows
 
-### [node/npm](https://nodejs.org/en/download/package-manager)
+<details>
+<summary>Show Windows-specific setup</summary>
 
-### golang
-
-### python3/pip
-
-### NeoVim Dependencies
-Unix only
-```sh
-./nvim/install_dependencies.sh
+#### PowerShell 7
+```powershell
+winget install --id Microsoft.PowerShell --source winget
 ```
 
+#### zig
+```powershell
+winget install -e --id zig.zig
+```
+
+#### Windows Terminal font
+```json
+{
+    ...
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "font": 
+            {
+                "face": "JetBrainsMono Nerd Font Mono"
+            }
+        },
+        ...
+    }
+    ...
+}
+```
+
+</details>
+
+## Shell Local Extensions
+Local git-ignored scripts can be placed in `shell/*/extensions/` and are automatically sourced by the respective shell configs.
+
+## Neovim Mason Profiles
+Profile configuration lives in [nvim/lua/config/mason_profiles.lua](nvim/lua/config/mason_profiles.lua).  
+Local profile selection should be configured in git-ignored [nvim/lua/config/local/mason.lua](nvim/lua/config/local/mason.lua).  
+Additional language extensions can also be defined there and installed through `:Mason`.
+
 ## Download dotfiles and link them
-After succesfull setup of all prerequisites, run:
 ```sh
 git clone git@github.com:norberthanderek/dotfiles.git $HOME/.dotfiles --depth 1
 cd $HOME/.dotfiles
 ```
-
-## Link configurations
-
-### Unix
+Then:
 ```ps1
 # Unix shells
 ./link.sh
@@ -55,7 +97,7 @@ cd $HOME/.dotfiles
 .\link.ps1
 ```
 
-## Install VSCode extentions
+## Install VSCode extensions
 ```ps1
 # Unix shells
 cat vscode/extensions.txt | xargs -n 1 code --install-extension

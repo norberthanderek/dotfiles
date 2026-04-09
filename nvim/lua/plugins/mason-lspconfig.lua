@@ -1,25 +1,10 @@
 local function config()
   local mason_lspconfig = require("mason-lspconfig")
+  local mason_profiles = require("config.mason_profiles")
 
   mason_lspconfig.setup({
     automatic_installation = true,
-    ensure_installed = {
-      "clangd", -- C/C++
-      "rust_analyzer", -- Rust
-      "pyright", -- Python
-      "lua_ls", -- Lua
-      "svelte", -- Svelte
-      "ts_ls", -- TypeScript
-      "gopls", -- GO
-      "omnisharp", -- C#
-      "dockerls", -- Docker
-      "html", -- HTML
-      "cssls", -- CSS
-      "jsonls", -- JSON
-      "yamlls", -- YAML
-      "bashls", -- Bash
-      "sqlls", -- SQL
-    },
+    ensure_installed = mason_profiles.ensure_installed("lsp"),
   })
 end
 
