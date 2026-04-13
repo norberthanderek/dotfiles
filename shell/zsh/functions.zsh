@@ -33,8 +33,8 @@ alias fdr=fast_dir_remove
 
 show_contents() {
     local root="${1:-.}"
-    root=$(cd "$content_root" 2>/dev/null && pwd) || {
-        echo "Path not found: $content_root" >&2
+    root=$(cd "$root" 2>/dev/null && pwd) || {
+        echo "Path not found: ${1:-.}" >&2
         return 1
     }
 

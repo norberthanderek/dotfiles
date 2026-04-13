@@ -1,5 +1,8 @@
 $dotfiles = Join-Path $HOME '.dotfiles'
 
+# Source functions.ps1
+. (Join-Path $dotfiles 'shell\powershell\functions.ps1')
+
 # Add individual extentions to shell
 $extensionsPath = Join-Path $dotfiles 'shell\powershell\extensions'
 Get-ChildItem -Path $extensionsPath -Filter '*.ps1' | ForEach-Object {
