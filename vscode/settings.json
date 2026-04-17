@@ -32,5 +32,6 @@
     "window.titleBarStyle": "custom",
     "explorer.confirmDragAndDrop": false,
     "svelte.enable-ts-plugin": true,
-    "cmake.showOptionsMovedNotification": false
+    "cmake.showOptionsMovedNotification": false,
+    "claudeCode.preferredLocation": "panel"
 }
