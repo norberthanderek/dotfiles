@@ -1,37 +1,36 @@
 {
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
-    "vscode-neovim.ctrlKeysForNormalMode": ["r","q"],
-    "vscode-neovim.ctrlKeysForInsertMode": [],
-    "files.autoSave": "afterDelay",
-    "editor.renderWhitespace": "all",
-    "editor.smoothScrolling": true,
-    "editor.mouseWheelZoom": true,
-    "editor.fontSize": 14,
-    "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-    "editor.tabSize": 4,
-    "[cpp]": {
-        "editor.defaultFormatter": "xaver.clang-format"
-    },
-    "[go]": {
-        "editor.insertSpaces": false
-    },
-    "[templ]": {
-        "editor.insertSpaces": false
-    },
-    "files.exclude": {
-        "**/*_templ.go": true,
-        "**/*_templ.txt": true
-    },
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.scrollback": 5000,
-    "workbench.colorTheme": "Bearded Theme Monokai Reversed",
-    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
-    "window.titleBarStyle": "custom",
-    "explorer.confirmDragAndDrop": false,
-    "svelte.enable-ts-plugin": true,
-    "cmake.showOptionsMovedNotification": false,
-    "claudeCode.preferredLocation": "panel"
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+  "vscode-neovim.ctrlKeysForNormalMode": ["r", "q"],
+  "vscode-neovim.ctrlKeysForInsertMode": [],
+  "files.autoSave": "afterDelay",
+  "editor.renderWhitespace": "all",
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelZoom": true,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.tabSize": 4,
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[go]": {
+    "editor.insertSpaces": false
+  },
+  "[templ]": {
+    "editor.insertSpaces": false
+  },
+  "files.exclude": {
+    "**/*_templ.go": true,
+    "**/*_templ.txt": true
+  },
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 5000,
+  "workbench.colorTheme": "Bearded Theme Monokai Reversed",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "window.titleBarStyle": "custom",
+  "explorer.confirmDragAndDrop": false,
+  "svelte.enable-ts-plugin": true,
+  "cmake.showOptionsMovedNotification": false
 }
