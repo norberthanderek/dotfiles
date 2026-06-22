@@ -41,12 +41,18 @@ create_symlink "$SCRIPT_DIR/ghostty" ~/.config/ # Automatically adds 'ghostty' a
 remove_existing ~/.zshrc
 create_symlink "$SCRIPT_DIR/shell/zsh/.zshrc" ~/.zshrc
 
-# editors
+# Editors
 remove_existing ~/.config/nvim
 create_symlink "$SCRIPT_DIR/nvim" ~/.config/ # Automatically adds 'nvim' as it's a directory
 remove_existing "$VS_CODE_CONFIG/settings.json"
 create_symlink "$SCRIPT_DIR/vscode/settings.json" "$VS_CODE_CONFIG/settings.json"
 remove_existing "$VS_CODE_CONFIG/keybindings.json"
 create_symlink "$SCRIPT_DIR/vscode/keybindings.json" "$VS_CODE_CONFIG/keybindings.json"
+
+# LLMs
+remove_existing ~/.claude/CLAUDE.md
+create_symlink "$SCRIPT_DIR/llm/instructions.md" ~/.claude/CLAUDE.md
+remove_existing ~/.codex/AGENTS.md
+create_symlink "$SCRIPT_DIR/llm/instructions.md" ~/.codex/AGENTS.md
 
 echo "Done"
