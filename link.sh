@@ -48,6 +48,10 @@ remove_existing "$VS_CODE_CONFIG/settings.json"
 create_symlink "$SCRIPT_DIR/vscode/settings.json" "$VS_CODE_CONFIG/settings.json"
 remove_existing "$VS_CODE_CONFIG/keybindings.json"
 create_symlink "$SCRIPT_DIR/vscode/keybindings.json" "$VS_CODE_CONFIG/keybindings.json"
+remove_existing "$HOME/.config/zed/settings.json"
+create_symlink "$SCRIPT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
+remove_existing "$HOME/.config/zed/keymap.json"
+create_symlink "$SCRIPT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
 
 # LLMs
 remove_existing ~/.claude/CLAUDE.md
