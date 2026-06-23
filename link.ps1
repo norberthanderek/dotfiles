@@ -4,6 +4,7 @@ $ErrorActionPreference = "Stop"
 # Paths
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $vscodeUserDir = Join-Path $env:APPDATA 'Code\User'
+$zedConfigDir = Join-Path $env:APPDATA 'Zed'
 $nvimConfigDir = Join-Path $env:LOCALAPPDATA 'nvim'
 $powerShellProfile = $PROFILE
 $claudeUserDir = Join-Path $env:USERPROFILE '.claude'
@@ -49,6 +50,10 @@ Remove-Existing "$vscodeUserDir\settings.json"
 New-Symlink "$scriptDir\vscode\settings.json" "$vscodeUserDir\settings.json"
 Remove-Existing "$vscodeUserDir\keybindings.json"
 New-Symlink "$scriptDir\vscode\keybindings.json" "$vscodeUserDir\keybindings.json"
+Remove-Existing "$zedConfigDir\settings.json"
+New-Symlink "$scriptDir\zed\settings.json" "$zedConfigDir\settings.json"
+Remove-Existing "$zedConfigDir\keymap.json"
+New-Symlink "$scriptDir\zed\keymap.json" "$zedConfigDir\keymap.json"
 
 # LLMs
 Remove-Existing "$claudeUserDir\CLAUDE.md"

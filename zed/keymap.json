@@ -1,0 +1,33 @@
+[
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": ["terminal::SendText", "\u001b\r"],
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space g d": "editor::GoToDefinition",
+      "space g r": "editor::FindAllReferences",
+      "space c a": "editor::ToggleCodeActions",
+      "space r n": "editor::Rename",
+      "space d": "editor::Hover",
+      "space f m": "editor::Format",
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousHunk",
+      "space h p": "editor::ToggleSelectedDiffHunks",
+      "space h a": "git::StageAndNext",
+      "space h r": "git::UnstageAndNext",
+      "space h c": "git::Restore",
+      "space b l": "git::Blame",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space h a": "git::StageRange",
+      "space h c": "git::Restore",
+    },
+  },
+]

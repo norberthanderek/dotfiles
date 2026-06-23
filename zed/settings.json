@@ -1,0 +1,44 @@
+{
+  "project_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "agent": {
+    "dock": "right",
+    "sidebar_side": "right",
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "vim_mode": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "format_on_save": "off",
+  "show_whitespaces": "all",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_size": 14,
+  "tabs": {
+    "git_status": true,
+  },
+  "auto_install_extensions": {
+    "monokai-reversed": true,
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Monokai Reversed",
+  },
+}
