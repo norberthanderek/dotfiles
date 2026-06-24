@@ -1,4 +1,19 @@
 {
+  // Appearance
+  "theme": {
+    "mode": "dark",
+    "light": "Monokai Nebula Light",
+    "dark": "Bearded Theme Monokai Reversed",
+  },
+  "ui_font_family": "JetBrainsMono Nerd Font Mono",
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+  "buffer_font_size": 14,
+  "auto_install_extensions": {
+    "bearded-theme": true,
+  },
+
+  // Panels & UI
   "project_panel": {
     "dock": "left",
   },
@@ -9,11 +24,17 @@
     "dock": "right",
     "sidebar_side": "right",
   },
-  "agent_servers": {
-    "claude-acp": {
-      "type": "registry",
-    },
+  "search": {
+    "button": false,
   },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "tabs": {
+    "git_status": true,
+  },
+
+  // Editor
   "vim_mode": true,
   "autosave": {
     "after_delay": {
@@ -22,23 +43,41 @@
   },
   "format_on_save": "off",
   "show_whitespaces": "all",
+  "edit_predictions": {
+    "provider": "none",
+  },
+
+  // Agent servers
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+
+  // LSP & languages
+  "lsp": {
+    "lua-language-server": {
+      "settings": {
+        "Lua": {
+          "diagnostics": {
+            "globals": ["vim"],
+          },
+        },
+      },
+    },
+  },
+  "languages": {
+    "Lua": {
+      "tab_size": 2,
+    },
+    "Go": {
+      "hard_tabs": true,
+    },
+  },
+
+  // Telemetry
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
-  },
-  "ui_font_family": "JetBrainsMono Nerd Font Mono",
-  "ui_font_size": 16,
-  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
-  "buffer_font_size": 14,
-  "tabs": {
-    "git_status": true,
-  },
-  "auto_install_extensions": {
-    "monokai-reversed": true,
-  },
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Monokai Reversed",
   },
 }
