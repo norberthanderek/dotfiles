@@ -45,6 +45,8 @@ end
 return {
   {
     "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+    keys = { "<leader>ff", "<leader>fg", "<leader>fb", "<leader>fn", "<leader>gs" },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       config()

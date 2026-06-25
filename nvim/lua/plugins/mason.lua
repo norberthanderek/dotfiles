@@ -17,6 +17,8 @@ end
 return {
   {
     "williamboman/mason.nvim",
+    cmd = { "Mason", "MasonInstall", "MasonUpdate" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       config()
     end,

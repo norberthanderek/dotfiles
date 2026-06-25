@@ -4,7 +4,7 @@ local function config()
 
   mason_installer.setup({
     ensure_installed = mason_profiles.ensure_installed("tools"),
-    auto_update = true,
+    auto_update = false,
     run_on_start = true,
   })
 end
@@ -12,6 +12,8 @@ end
 return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    event = "VeryLazy",
+    cmd = { "MasonToolsInstall", "MasonToolsUpdate", "MasonToolsClean" },
     config = function()
       config()
     end,
