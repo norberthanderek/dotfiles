@@ -35,35 +35,16 @@ local profiles = {
     lsp = {
       "yamlls",
       "bashls",
-      "dockerls",
     },
     tools = {
       "shfmt",
     },
-  },
-  go = {
-    lsp = {
-      "gopls",
-    },
-    tools = {},
   },
   lua = {
     lsp = {},
     tools = {
       "luacheck",
     },
-  },
-  data = {
-    lsp = {
-      "sqlls",
-    },
-    tools = {},
-  },
-  dotnet = {
-    lsp = {
-      "omnisharp",
-    },
-    tools = {},
   },
 }
 

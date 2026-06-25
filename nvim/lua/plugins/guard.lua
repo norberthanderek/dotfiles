@@ -131,26 +131,7 @@ local function config()
     })
   end
 
-  if mason_profiles.is_enabled("dotnet") then
-    register_format({ "cs" }, { "dotnet" }, {
-      cmd = "dotnet",
-      args = { "format", "--check", "%:p" },
-      stdin = false,
-    })
-    register_lint({ "cs" }, { "dotnet" }, {
-      cmd = "dotnet",
-      args = { "format", "--check", "%:p" },
-      stdin = false,
-    })
-  end
-
   if mason_profiles.is_enabled("infra") then
-    register_format({ "dockerfile" }, { "docker" }, {
-      cmd = "docker",
-      args = { "run", "--rm", "hadolint/hadolint", "hadolint", "--no-fail", "-" },
-      stdin = true,
-    })
-
     register_format({ "sh", "zsh" }, { "shfmt" }, {
       cmd = "shfmt",
       args = { "-i", "4" },
@@ -161,14 +142,6 @@ local function config()
 
   if mason_profiles.is_enabled("web") then
     register_format({ "javascript", "typescript", "svelte", "html", "css", "scss", "yaml", "yml", "json" }, { "prettier" }, "prettier")
-  end
-
-  if mason_profiles.is_enabled("go") then
-    register_format({ "go" }, { "gofmt" }, {
-      cmd = "gofmt",
-      args = { "-s" },
-      stdin = true,
-    })
   end
 
   vim.g.guard_config = {
@@ -182,6 +155,9 @@ end
 return {
   {
     "nvimdev/guard.nvim",
+    keys = "<leader>fm",
+    cmd = "Guard",
+    event = "BufWritePre",
     dependencies = {
       "nvimdev/guard-collection",
       "williamboman/mason.nvim",

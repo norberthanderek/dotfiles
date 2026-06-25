@@ -11,6 +11,7 @@ end
 return {
   {
     "williamboman/mason-lspconfig.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       config()
     end,

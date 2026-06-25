@@ -54,6 +54,8 @@ end
 return {
   {
     "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeFocus", "NvimTreeToggle" },
+    keys = { "<leader>e", "<leader>n" },
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
