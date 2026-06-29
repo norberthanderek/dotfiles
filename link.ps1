@@ -54,6 +54,8 @@ Remove-Existing "$zedConfigDir\settings.json"
 New-Symlink "$scriptDir\zed\settings.json" "$zedConfigDir\settings.json"
 Remove-Existing "$zedConfigDir\keymap.json"
 New-Symlink "$scriptDir\zed\keymap.json" "$zedConfigDir\keymap.json"
+Remove-Existing "$zedConfigDir\tasks.json"
+New-Symlink "$scriptDir\zed\tasks.json" "$zedConfigDir\tasks.json"
 
 # LLMs
 Remove-Existing "$claudeUserDir\CLAUDE.md"

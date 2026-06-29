@@ -52,6 +52,8 @@ remove_existing "$HOME/.config/zed/settings.json"
 create_symlink "$SCRIPT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
 remove_existing "$HOME/.config/zed/keymap.json"
 create_symlink "$SCRIPT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+remove_existing "$HOME/.config/zed/tasks.json"
+create_symlink "$SCRIPT_DIR/zed/tasks.json" "$HOME/.config/zed/tasks.json"
 
 # LLMs
 remove_existing ~/.claude/CLAUDE.md

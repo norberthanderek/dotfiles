@@ -18,7 +18,7 @@
     "dock": "left",
   },
   "git_panel": {
-    "dock": "left",
+    "button": false,
   },
   "agent": {
     "dock": "right",

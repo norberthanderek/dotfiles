@@ -14,3 +14,13 @@ vim.keymap.set("n", "<leader>fe", ':call VSCodeNotify("workbench.view.explorer")
 vim.keymap.set("n", "<leader>ff", ':call VSCodeNotify("workbench.action.quickOpen")<CR>', keymap_opts)
 vim.keymap.set("n", "<leader>fg", ':call VSCodeNotify("workbench.action.findInFiles")<CR>', keymap_opts)
 vim.keymap.set("n", "<leader>fb", ':call VSCodeNotify("workbench.action.showAllEditors")<CR>', keymap_opts)
+
+-- Lazygit in a terminal editor tab
+vim.keymap.set("n", "<leader>gg", function()
+  vim.fn.VSCodeNotify("runCommands", {
+    commands = {
+      { command = "workbench.action.createTerminalEditor" },
+      { command = "workbench.action.terminal.sendSequence", args = { text = "lazygit; exit\r" } },
+    },
+  })
+end, keymap_opts)
