@@ -9,6 +9,11 @@ Get-ChildItem -Path $extensionsPath -Filter '*.ps1' | ForEach-Object {
     . $_.FullName
 }
 
+# Ctrl+D: delete char, or exit on an empty line (bash-style)
+if (Get-Module PSReadLine) {
+    Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteCharOrExit
+}
+
 # Open next tab in the same directory
 function prompt {
     $loc = $executionContext.SessionState.Path.CurrentLocation;
