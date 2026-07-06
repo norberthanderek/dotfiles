@@ -12,6 +12,7 @@
   "editor.fontSize": 14,
   "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.tabSize": 4,
+  "editor.minimap.enabled": false,
   "[cpp]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
@@ -27,6 +28,8 @@
   },
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.environmentChangesRelaunch": false,
   "workbench.colorTheme": "Bearded Theme Monokai Reversed",
   "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
   "window.titleBarStyle": "custom",

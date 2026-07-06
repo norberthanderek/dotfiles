@@ -6,6 +6,12 @@
     },
   },
   {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-`": "workspace::NewCenterTerminal",
+    },
+  },
+  {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "space g g": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }],
