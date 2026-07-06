@@ -2,7 +2,7 @@
   // Appearance
   "theme": {
     "mode": "dark",
-    "light": "Monokai Nebula Light",
+    "light": "Catppuccin Latte",
     "dark": "Bearded Theme Monokai Reversed",
   },
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
@@ -11,14 +11,12 @@
   "buffer_font_size": 14,
   "auto_install_extensions": {
     "bearded-theme": true,
+    "catppuccin": true,
   },
 
   // Panels & UI
   "project_panel": {
     "dock": "left",
-  },
-  "git_panel": {
-    "button": false,
   },
   "agent": {
     "dock": "right",
