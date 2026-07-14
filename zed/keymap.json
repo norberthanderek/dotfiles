@@ -3,6 +3,15 @@
     "context": "Terminal",
     "bindings": {
       "shift-enter": ["terminal::SendText", "\u001b\r"],
+      "ctrl-}": "pane::ActivateNextItem",
+      "ctrl-{": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-}": "pane::ActivateNextItem",
+      "ctrl-{": "pane::ActivatePreviousItem",
     },
   },
   {

@@ -30,6 +30,10 @@
   "terminal.integrated.scrollback": 5000,
   "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.environmentChangesRelaunch": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.nextEditor",
+    "workbench.action.previousEditor"
+  ],
   "workbench.colorTheme": "Bearded Theme Monokai Reversed",
   "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
   "window.titleBarStyle": "custom",
