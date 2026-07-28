@@ -1,0 +1,8 @@
+# Common configuration
+include $HOME/.dotfiles/tiling/sway/conf.d/*.conf
+
+# systemd/dbus environment import.
+include /etc/sway/config.d/*
+
+# Machine-local, git-ignored, last so it wins.
+include $HOME/.dotfiles/tiling/sway/local/*.conf

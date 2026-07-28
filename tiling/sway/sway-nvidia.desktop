@@ -1,0 +1,8 @@
+# GDM session entry, installed by install-sway-session.sh. See README.md.
+# The WLR_* vars only work here, wlroots reads them before any shell rc is sourced.
+[Desktop Entry]
+Name=Sway (NVIDIA)
+Comment=An i3-compatible Wayland compositor
+Exec=env WLR_NO_HARDWARE_CURSORS=1 WLR_RENDERER=vulkan sway --unsupported-gpu
+Type=Application
+DesktopNames=sway

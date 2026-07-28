@@ -62,6 +62,14 @@ create_symlink "$SCRIPT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
 remove_existing "$HOME/.config/zed/tasks.json"
 create_symlink "$SCRIPT_DIR/zed/tasks.json" "$HOME/.config/zed/tasks.json"
 
+# Tiling window managers
+if [[ "$OS_NAME" == "Linux" ]]; then
+    remove_existing ~/.config/sway/config
+    create_symlink "$SCRIPT_DIR/tiling/sway/config" ~/.config/sway/config
+    remove_existing ~/.config/tofi/config
+    create_symlink "$SCRIPT_DIR/tiling/sway/tofi.config" ~/.config/tofi/config
+fi
+
 # LLMs
 remove_existing ~/.claude/CLAUDE.md
 create_symlink "$SCRIPT_DIR/llm/instructions.md" ~/.claude/CLAUDE.md
