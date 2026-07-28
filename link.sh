@@ -41,6 +41,13 @@ create_symlink "$SCRIPT_DIR/ghostty" ~/.config/ # Automatically adds 'ghostty' a
 remove_existing ~/.zshrc
 create_symlink "$SCRIPT_DIR/shell/zsh/.zshrc" ~/.zshrc
 
+# Linux systemd ession environment
+SESSION_ENV="$SCRIPT_DIR/shell/zsh/extensions/environment.conf"
+if [[ "$OS_NAME" == "Linux" && -f "$SESSION_ENV" ]]; then
+    remove_existing ~/.config/environment.d/999-dotfiles.conf
+    create_symlink "$SESSION_ENV" ~/.config/environment.d/999-dotfiles.conf
+fi
+
 # Editors
 remove_existing ~/.config/nvim
 create_symlink "$SCRIPT_DIR/nvim" ~/.config/ # Automatically adds 'nvim' as it's a directory
