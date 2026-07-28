@@ -14,6 +14,12 @@ if (Get-Module PSReadLine) {
     Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteCharOrExit
 }
 
+# Setup fzf: Ctrl+R history search, Ctrl+T file picker
+if (Get-Module -ListAvailable PSFzf) {
+    Import-Module PSFzf
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+}
+
 # Open next tab in the same directory
 function prompt {
     $loc = $executionContext.SessionState.Path.CurrentLocation;

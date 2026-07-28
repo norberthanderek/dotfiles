@@ -55,3 +55,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Source Rust env
 [ -s "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"
+
+# Source fzf
+[[ -d $HOME/.fzf/bin ]] && export PATH="$PATH:$HOME/.fzf/bin"
+command -v fzf >/dev/null && source <(fzf --zsh)
