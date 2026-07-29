@@ -1,0 +1,79 @@
+// `letter_spacing` compensates each icon's ink, which overruns its cell by up to 6.8px.
+// Target is a uniform ~7px gap: gap = baseline + value/1536 px. Glyphs already at ~7px get none.
+// `spacing` and `max-length` have no CSS equivalent in waybar, hence visual values in this file.
+// `height` must equal what style.css produces, or waybar warns and this value wins instead.
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 28,
+    "spacing": 16,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "bluetooth",
+        "network",
+        "battery",
+        "clock"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
+    "sway/window": {
+        "max-length": 90
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": " mute",
+        "format-icons": [
+            "<span letter_spacing='4608'></span>",
+            "<span letter_spacing='10752'></span>"
+        ],
+        "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format": "<span letter_spacing='1536'></span> {num_connections}",
+        "format-connected-battery": "<span letter_spacing='1536'></span> {num_connections} {device_battery_percentage}%",
+        "format-disabled": "<span letter_spacing='1536'></span> off",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+    "network": {
+        "format-wifi": "<span letter_spacing='10752'></span> {essid}",
+        "format-ethernet": "<span letter_spacing='7680'></span> {ipaddr}",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname} {ipaddr}"
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ADP0",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span letter_spacing='7680'>{icon}</span> {capacity}%",
+        "format-charging": "<span letter_spacing='1536'></span> {capacity}%",
+        "format-plugged": "<span letter_spacing='1536'></span> {capacity}%",
+        "format-full": "<span letter_spacing='1536'></span> {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "clock": {
+        "format": "<span letter_spacing='4608'></span> {:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    }
+}

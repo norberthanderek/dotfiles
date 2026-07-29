@@ -68,6 +68,8 @@ if [[ "$OS_NAME" == "Linux" ]]; then
     create_symlink "$SCRIPT_DIR/tiling/sway/config" ~/.config/sway/config
     remove_existing ~/.config/tofi/config
     create_symlink "$SCRIPT_DIR/tiling/sway/tofi.config" ~/.config/tofi/config
+    remove_existing ~/.config/waybar
+    create_symlink "$SCRIPT_DIR/tiling/waybar" ~/.config/waybar
 fi
 
 # LLMs

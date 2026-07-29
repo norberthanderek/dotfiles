@@ -1,0 +1,116 @@
+/* Colors are Bearded Monokai Reversed */
+
+/* Bar height is this negative margin, not `height` in the config. Keep the two equal.
+   padding:0 and min-height:0 do nothing. `*` matches ~6 nested widgets, so -1px cuts ~6px. */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    padding: 0;
+    margin: -1px 0;
+}
+
+window#waybar {
+    background-color: #12141a;
+    color: #c6cad7;
+}
+
+/* The `*` reset above also matches tooltips, where a negative margin collapses them. Undo it here. */
+tooltip {
+    background-color: #212430;
+    border: 1px solid #0a0b0f;
+    margin: 0;
+    padding: 6px;
+}
+
+tooltip label {
+    color: #c6cad7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Half the `spacing` from the config. */
+.modules-right {
+    margin-right: 8px;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: #a9aec1;
+    background-color: transparent;
+    background-image: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#workspaces button:hover {
+    color: #c6cad7;
+    background-color: #363a43;
+    background-image: none;
+}
+
+#workspaces button.focused {
+    color: #12141a;
+    background-color: #78dce8;
+    background-image: none;
+}
+
+#workspaces button.focused:hover {
+    color: #12141a;
+    background-color: #45A2BF;
+    background-image: none;
+}
+
+#workspaces button.urgent {
+    color: #12141a;
+    background-color: #ff6188;
+    background-image: none;
+}
+
+#mode {
+    padding: 0 4px;
+    color: #12141a;
+    background-color: #ffd866;
+}
+
+#window {
+    color: #a9aec1;
+}
+
+#wireplumber {
+    color: #a9dc76;
+}
+
+#bluetooth {
+    color: #a9aec1;
+}
+
+#bluetooth.connected {
+    color: #ab9df2;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+    color: #4c526b;
+}
+
+#network {
+    color: #78dce8;
+}
+
+#network.disconnected {
+    color: #ff6188;
+}
+
+#battery {
+    color: #a9dc76;
+}
+
+#battery.warning {
+    color: #ffd866;
+}
+
+#battery.critical {
+    color: #ff6188;
+}
