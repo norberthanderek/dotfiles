@@ -4,4 +4,13 @@
 ![stalenhag - robot](robot-stalenhag.jpg)
 
 # samdape
-![stalenhag - robot](creation-samdape.jpg)
+![samdape - creation](creation-samdape.jpg)
+
+# samsommer
+![samsommer - alps](alps-samsommer.jpg)
+
+# moreau
+![moreau - facade](facade-moreau.jpg)
+
+# zhukov
+![zhukov - hills](hills-zhukov.jpg)
