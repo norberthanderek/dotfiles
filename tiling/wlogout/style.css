@@ -1,0 +1,43 @@
+/* Colors are Bearded Monokai Reversed, read out of the zed theme of the same names. */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    /* Sizes the icons too, they are glyphs in ./layout's text and wlogout labels take no markup. */
+    font-size: 32px;
+    background-image: none;
+    box-shadow: none;
+    /* Kills Yaru-dark's 2px #ef8661 focus ring, button:focus replaces it. */
+    outline-style: none;
+}
+
+window {
+    background-color: rgba(18, 20, 26, 0.85);
+}
+
+/* wlogout pins the label at yalign 0.9, the layout `height` key clamps to 1.0 (raw ASCII byte bug). */
+/* padding leaves the label no vertical slack, which is what centres the text. */
+/* 26px suits the 1200px-tall outputs, the 1280px one stays ~8px low. */
+button {
+    color: #c6cad7;
+    background-color: #212430;
+    border: 1px solid #0a0b0f;
+    border-radius: 8px;
+    margin: 8px 12px;
+    padding: 26px 0;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+button:hover,
+button:active {
+    background-color: #2c303f;
+}
+
+button:focus {
+    border-color: #98a2b5;
+}
+
+/* `label` in ./layout becomes the widget name, hence these selectors. */
+#shutdown,
+#reboot {
+    color: #fc6a67;
+}

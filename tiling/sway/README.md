@@ -15,7 +15,7 @@ Only `config` is symlinked. `conf.d/` and `local/` are pulled in by absolute-pat
 ```sh
 sudo apt install sway sway-backgrounds swaybg swaylock waybar tofi \
   mako-notifier wl-clipboard grim slurp xdg-desktop-portal-wlr \
-  brightnessctl brightness-udev pavucontrol blueman
+  brightnessctl brightness-udev pavucontrol blueman wlogout
 
 sudo usermod -aG video $USER
 
