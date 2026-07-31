@@ -74,6 +74,8 @@ if [[ "$OS_NAME" == "Linux" ]]; then
     create_symlink "$SCRIPT_DIR/tiling/sway/swaylock.config" ~/.config/swaylock/config
     remove_existing ~/.config/waybar
     create_symlink "$SCRIPT_DIR/tiling/waybar" ~/.config/waybar
+    remove_existing ~/.config/wlogout
+    create_symlink "$SCRIPT_DIR/tiling/wlogout" ~/.config/wlogout
 fi
 
 # LLMs
