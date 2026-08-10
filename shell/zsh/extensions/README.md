@@ -11,5 +11,5 @@ Populate it with local shell scripts and variables that are meant to be auto-inc
 
 ### Linux systemd
 
-`environment.conf` is `link.sh` linked config file with systemd syntax.  
+`environment.conf` is `link.zsh` linked config file with systemd syntax.  
 It applies to the whole session, including terminals and apps, from the next login on.

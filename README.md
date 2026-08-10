@@ -113,7 +113,7 @@ Then:
 
 ```ps1
 # Unix shells
-./link.sh
+./link.zsh
 # Powershell (as Administrator)
 .\link.ps1
 ```
