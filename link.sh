@@ -14,7 +14,7 @@ else
     exit 1
 fi
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="${0:A:h}"
 
 remove_existing() {
     # If it's a symlink - remove
@@ -33,55 +33,43 @@ create_symlink() {
     mkdir -p "$(dirname "$link")" && ln -s "$target" "$link"
 }
 
+relink() {
+    remove_existing "$2"
+    create_symlink "$1" "$2"
+}
+
 # Terminal
-remove_existing ~/.config/ghostty
-create_symlink "$SCRIPT_DIR/ghostty" ~/.config/ # Automatically adds 'ghostty' as it's a directory
+relink "$SCRIPT_DIR/ghostty" ~/.config/ghostty
 
 # Shell
-remove_existing ~/.zshrc
-create_symlink "$SCRIPT_DIR/shell/zsh/.zshrc" ~/.zshrc
+relink "$SCRIPT_DIR/shell/zsh/.zshrc" ~/.zshrc
 
-# Linux systemd ession environment
+# Linux systemd session environment
 SESSION_ENV="$SCRIPT_DIR/shell/zsh/extensions/environment.conf"
 if [[ "$OS_NAME" == "Linux" && -f "$SESSION_ENV" ]]; then
-    remove_existing ~/.config/environment.d/999-dotfiles.conf
-    create_symlink "$SESSION_ENV" ~/.config/environment.d/999-dotfiles.conf
+    relink "$SESSION_ENV" ~/.config/environment.d/999-dotfiles.conf
 fi
 
 # Editors
-remove_existing ~/.config/nvim
-create_symlink "$SCRIPT_DIR/nvim" ~/.config/ # Automatically adds 'nvim' as it's a directory
-remove_existing "$VS_CODE_CONFIG/settings.json"
-create_symlink "$SCRIPT_DIR/vscode/settings.json" "$VS_CODE_CONFIG/settings.json"
-remove_existing "$VS_CODE_CONFIG/keybindings.json"
-create_symlink "$SCRIPT_DIR/vscode/keybindings.json" "$VS_CODE_CONFIG/keybindings.json"
-remove_existing "$HOME/.config/zed/settings.json"
-create_symlink "$SCRIPT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
-remove_existing "$HOME/.config/zed/keymap.json"
-create_symlink "$SCRIPT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
-remove_existing "$HOME/.config/zed/tasks.json"
-create_symlink "$SCRIPT_DIR/zed/tasks.json" "$HOME/.config/zed/tasks.json"
+relink "$SCRIPT_DIR/nvim" ~/.config/nvim
+relink "$SCRIPT_DIR/vscode/settings.json" "$VS_CODE_CONFIG/settings.json"
+relink "$SCRIPT_DIR/vscode/keybindings.json" "$VS_CODE_CONFIG/keybindings.json"
+relink "$SCRIPT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
+relink "$SCRIPT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+relink "$SCRIPT_DIR/zed/tasks.json" "$HOME/.config/zed/tasks.json"
 
 # Tiling window managers
 if [[ "$OS_NAME" == "Linux" ]]; then
-    remove_existing ~/.config/sway/config
-    create_symlink "$SCRIPT_DIR/tiling/sway/config" ~/.config/sway/config
-    remove_existing ~/.config/tofi/config
-    create_symlink "$SCRIPT_DIR/tiling/sway/tofi.config" ~/.config/tofi/config
-    remove_existing ~/.config/mako/config
-    create_symlink "$SCRIPT_DIR/tiling/sway/mako.config" ~/.config/mako/config
-    remove_existing ~/.config/swaylock/config
-    create_symlink "$SCRIPT_DIR/tiling/sway/swaylock.config" ~/.config/swaylock/config
-    remove_existing ~/.config/waybar
-    create_symlink "$SCRIPT_DIR/tiling/waybar" ~/.config/waybar
-    remove_existing ~/.config/wlogout
-    create_symlink "$SCRIPT_DIR/tiling/wlogout" ~/.config/wlogout
+    relink "$SCRIPT_DIR/tiling/sway/config" ~/.config/sway/config
+    relink "$SCRIPT_DIR/tiling/sway/tofi.config" ~/.config/tofi/config
+    relink "$SCRIPT_DIR/tiling/sway/mako.config" ~/.config/mako/config
+    relink "$SCRIPT_DIR/tiling/sway/swaylock.config" ~/.config/swaylock/config
+    relink "$SCRIPT_DIR/tiling/waybar" ~/.config/waybar
+    relink "$SCRIPT_DIR/tiling/wlogout" ~/.config/wlogout
 fi
 
 # LLMs
-remove_existing ~/.claude/CLAUDE.md
-create_symlink "$SCRIPT_DIR/llm/instructions.md" ~/.claude/CLAUDE.md
-remove_existing ~/.codex/AGENTS.md
-create_symlink "$SCRIPT_DIR/llm/instructions.md" ~/.codex/AGENTS.md
+relink "$SCRIPT_DIR/llm/instructions.md" ~/.claude/CLAUDE.md
+relink "$SCRIPT_DIR/llm/instructions.md" ~/.codex/AGENTS.md
 
 echo "Done"

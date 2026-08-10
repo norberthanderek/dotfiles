@@ -39,28 +39,26 @@ function New-Symlink {
     New-Item -ItemType SymbolicLink -Path $LinkPath -Target $Target | Out-Null
 }
 
+function Set-Symlink {
+    param([string]$Target, [string]$LinkPath)
+
+    Remove-Existing $LinkPath
+    New-Symlink $Target $LinkPath
+}
+
 # Shell
-Remove-Existing $powerShellProfile
-New-Symlink "$scriptDir\shell\powershell\profile.ps1" $powerShellProfile
+Set-Symlink "$scriptDir\shell\powershell\profile.ps1" $powerShellProfile
 
 # Editors
-Remove-Existing $nvimConfigDir
-New-Symlink "$scriptDir\nvim" $nvimConfigDir
-Remove-Existing "$vscodeUserDir\settings.json"
-New-Symlink "$scriptDir\vscode\settings.json" "$vscodeUserDir\settings.json"
-Remove-Existing "$vscodeUserDir\keybindings.json"
-New-Symlink "$scriptDir\vscode\keybindings.json" "$vscodeUserDir\keybindings.json"
-Remove-Existing "$zedConfigDir\settings.json"
-New-Symlink "$scriptDir\zed\settings.json" "$zedConfigDir\settings.json"
-Remove-Existing "$zedConfigDir\keymap.json"
-New-Symlink "$scriptDir\zed\keymap.json" "$zedConfigDir\keymap.json"
-Remove-Existing "$zedConfigDir\tasks.json"
-New-Symlink "$scriptDir\zed\tasks.json" "$zedConfigDir\tasks.json"
+Set-Symlink "$scriptDir\nvim" $nvimConfigDir
+Set-Symlink "$scriptDir\vscode\settings.json" "$vscodeUserDir\settings.json"
+Set-Symlink "$scriptDir\vscode\keybindings.json" "$vscodeUserDir\keybindings.json"
+Set-Symlink "$scriptDir\zed\settings.json" "$zedConfigDir\settings.json"
+Set-Symlink "$scriptDir\zed\keymap.json" "$zedConfigDir\keymap.json"
+Set-Symlink "$scriptDir\zed\tasks.json" "$zedConfigDir\tasks.json"
 
 # LLMs
-Remove-Existing "$claudeUserDir\CLAUDE.md"
-New-Symlink "$scriptDir\llm\instructions.md" "$claudeUserDir\CLAUDE.md"
-Remove-Existing "$codexUserDir\AGENTS.md"
-New-Symlink "$scriptDir\llm\instructions.md" "$codexUserDir\AGENTS.md"
+Set-Symlink "$scriptDir\llm\instructions.md" "$claudeUserDir\CLAUDE.md"
+Set-Symlink "$scriptDir\llm\instructions.md" "$codexUserDir\AGENTS.md"
 
 Write-Host "Done"
