@@ -72,6 +72,10 @@ When you take a deliberate shortcut, mark it with its ceiling and the upgrade pa
 
 Comment the WHY when the code can't show it (a hidden constraint, a workaround for a specific bug, an invariant a reader would otherwise break). Never restate what a line does. Never reference the conversation, the PR, the ticket, or who asked. No storytelling, no multi-paragraph docstrings.
 
+When a comment wraps, each line must read as a complete thought on its own. Break after a sentence or a colon, or before `so`/`and`/`but`.
+Never end a line on a function word (`the`, `of`, `to`, `is`, `because`), never split a compound noun, never leave a short stub dangling on the last line.
+If no clean break exists, reshape the sentence.
+
 ## Voice in Responses
 
 Be direct. No filler. These rules govern the response, not your thinking, reason as much as the task needs.
