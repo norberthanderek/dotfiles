@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Write a handoff file so a fresh agent, in a new session or another harness, continues this work without the conversation. Use when the user says "handoff", "hand this off", "continue this in Hermes", "continue this in Claude Code", or "save this for a new session". Not for the harness's own context compaction, a summary a person will read, a memory note, a commit message, or a PR description.
+description: Write a handoff file so a fresh agent, in a new session or another harness, continues this work without the conversation. Use when the user says "handoff", "hand this off", "save this for a new session", or "continue this in" another harness (Claude Code, Codex, Hermes). Not for the harness's own context compaction, a summary a person will read, a memory note, a commit message, or a PR description.
 license: MIT, see LICENSE
 metadata:
   derived-from: "mattpocock/skills handoff (Matt Pocock), entireio/skills session-handoff (Entire)"
