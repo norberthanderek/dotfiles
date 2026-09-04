@@ -102,6 +102,17 @@ Profile configuration lives in [nvim/lua/config/mason_profiles.lua](nvim/lua/con
 Local profile selection should be configured in git-ignored [nvim/lua/config/local/mason.lua](nvim/lua/config/local/mason.lua).  
 Additional language extensions can also be defined there and installed through `:Mason`.
 
+## LLM Agents
+
+`llm/SOUL.md` is linked as `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` and `~/.hermes/SOUL.md`.  
+`llm/skills/` is linked as `~/.agents/skills` and per skill into `~/.claude/skills/`.  
+Hermes picks it up only after adding to `~/.hermes/config.yaml`:
+
+```yaml
+skills:
+  external_dirs: [~/.agents/skills]
+```
+
 ## Download dotfiles and link them
 
 ```sh

@@ -10,6 +10,7 @@ $powerShellProfile = $PROFILE
 $claudeUserDir = Join-Path $env:USERPROFILE '.claude'
 $codexUserDir = Join-Path $env:USERPROFILE '.codex'
 $hermesUserDir = Join-Path $env:USERPROFILE '.hermes'
+$agentsUserDir = Join-Path $env:USERPROFILE '.agents'
 
 function Remove-Existing {
     param([string]$Path)
@@ -61,6 +62,13 @@ Set-Symlink "$scriptDir\zed\tasks.json" "$zedConfigDir\tasks.json"
 # LLMs
 foreach ($target in "$claudeUserDir\CLAUDE.md", "$codexUserDir\AGENTS.md", "$hermesUserDir\SOUL.md") {
     Set-Symlink "$scriptDir\llm\SOUL.md" $target
+}
+
+# Skills: ~/.agents/skills is read-only for its harnesses, so link the whole dir.
+# Claude Code owns ~/.claude/skills and writes into it (synced/), so link per skill.
+Set-Symlink "$scriptDir\llm\skills" "$agentsUserDir\skills"
+foreach ($skill in Get-ChildItem "$scriptDir\llm\skills" -Directory) {
+    Set-Symlink $skill.FullName "$claudeUserDir\skills\$($skill.Name)"
 }
 
 Write-Host "Done"
