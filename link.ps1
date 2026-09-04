@@ -9,6 +9,7 @@ $nvimConfigDir = Join-Path $env:LOCALAPPDATA 'nvim'
 $powerShellProfile = $PROFILE
 $claudeUserDir = Join-Path $env:USERPROFILE '.claude'
 $codexUserDir = Join-Path $env:USERPROFILE '.codex'
+$hermesUserDir = Join-Path $env:USERPROFILE '.hermes'
 
 function Remove-Existing {
     param([string]$Path)
@@ -58,7 +59,8 @@ Set-Symlink "$scriptDir\zed\keymap.json" "$zedConfigDir\keymap.json"
 Set-Symlink "$scriptDir\zed\tasks.json" "$zedConfigDir\tasks.json"
 
 # LLMs
-Set-Symlink "$scriptDir\llm\instructions.md" "$claudeUserDir\CLAUDE.md"
-Set-Symlink "$scriptDir\llm\instructions.md" "$codexUserDir\AGENTS.md"
+foreach ($target in "$claudeUserDir\CLAUDE.md", "$codexUserDir\AGENTS.md", "$hermesUserDir\SOUL.md") {
+    Set-Symlink "$scriptDir\llm\SOUL.md" $target
+}
 
 Write-Host "Done"

@@ -69,7 +69,8 @@ if [[ "$OS_NAME" == "Linux" ]]; then
 fi
 
 # LLMs
-relink "$SCRIPT_DIR/llm/instructions.md" ~/.claude/CLAUDE.md
-relink "$SCRIPT_DIR/llm/instructions.md" ~/.codex/AGENTS.md
+for target in ~/.claude/CLAUDE.md ~/.codex/AGENTS.md ~/.hermes/SOUL.md; do
+    relink "$SCRIPT_DIR/llm/SOUL.md" "$target"
+done
 
 echo "Done"
