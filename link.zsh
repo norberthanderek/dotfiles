@@ -73,7 +73,7 @@ for target in ~/.claude/CLAUDE.md ~/.codex/AGENTS.md ~/.hermes/SOUL.md; do
     relink "$SCRIPT_DIR/llm/SOUL.md" "$target"
 done
 
-# Skills: ~/.agents/skills is read-only for its harnesses, so link the whole dir.
+# Skills: one link for the whole dir at ~/.agents/skills.
 # Claude Code owns ~/.claude/skills and writes into it (synced/), so link per skill.
 relink "$SCRIPT_DIR/llm/skills" ~/.agents/skills
 for skill in "$SCRIPT_DIR"/llm/skills/*/; do

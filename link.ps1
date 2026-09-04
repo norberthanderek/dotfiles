@@ -64,7 +64,7 @@ foreach ($target in "$claudeUserDir\CLAUDE.md", "$codexUserDir\AGENTS.md", "$her
     Set-Symlink "$scriptDir\llm\SOUL.md" $target
 }
 
-# Skills: ~/.agents/skills is read-only for its harnesses, so link the whole dir.
+# Skills: one link for the whole dir at ~/.agents/skills.
 # Claude Code owns ~/.claude/skills and writes into it (synced/), so link per skill.
 Set-Symlink "$scriptDir\llm\skills" "$agentsUserDir\skills"
 foreach ($skill in Get-ChildItem "$scriptDir\llm\skills" -Directory) {

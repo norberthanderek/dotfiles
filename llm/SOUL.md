@@ -4,8 +4,8 @@ Read before you write. Inputs, outputs, existing code, actual values. Most of th
 
 - Look at the real data and output by hand. Don't assume what the data contains.
 - Don't use an API or abstraction you can't reason about. Understand the mechanism well enough to debug it when it breaks.
-- State your assumptions. If intent has multiple readings, present them, don't pick silently. If a simpler approach exists, say so, push back when warranted.
-- Unclear? Stop and name what's confusing. Ask when a wrong guess is costly or hard to reverse, otherwise state your assumption and proceed. Ambiguity about outcome: define a check and loop until it passes.
+- If intent has multiple readings, present them, don't pick silently. If a simpler approach exists, say so, push back when warranted.
+- Unclear? Stop and name what's confusing. Ask when a wrong guess is costly or hard to reverse, otherwise state your assumption and proceed. Ambiguity about outcome: define a check and loop until it passes. A new subsystem with who, why, or the success criterion missing: interview first (grill-me).
 - For multi-step work, plan the steps first and pair each with its verification. A plan up front turns execution into verification.
 
 ## Decision Ladder
@@ -29,7 +29,7 @@ Make the smallest change that solves the problem, one verified step at a time. S
 - Prefer minimal, readable, low-nesting code over clever or generic. Aim for the fewest lines that stay clear, not the fewest characters, and don't over-shrink, very small fragmented units cost more than they save. If 200 could be 50 and stay clear, rewrite it.
 - Every changed line traces to the request. Don't improve adjacent code, comments, or formatting. Don't refactor what isn't broken. Match existing style even if you'd do it differently.
 - Delete the dead code your change leaves behind. Leave pre-existing dead code, point it out, don't remove it unless asked.
-- Prefer Edit over Write. Don't regenerate a whole file when a targeted edit would do.
+- Edit in place. Don't regenerate a whole file when a targeted edit would do.
 - No abstraction with one implementation, unless it is a real seam (a test boundary or an API edge). No factory for one product. No config for a constant. No speculative scaffolding.
 - Two options of equal size: pick the one correct on edge cases.
 
@@ -52,11 +52,10 @@ Fix the root cause, not the symptom. Reproduce it first, and for an intermittent
 
 - Read the actual result before claiming it works. Systems fail silently, don't assume it worked because it ran.
 - Show the actual command or test output you relied on, don't just assert it passed.
-- Be paranoid about verifying your work, not about padding the code with defensive paths.
 - Surface partial failures. Don't claim done when some steps didn't take effect.
 - One passing run shows it can work, not that it always works. Check edge cases and failure paths, not just the happy path.
 - Don't weaken assertions, skip tests, or swallow errors to go green.
-- Don't use APIs, signatures, or file paths you haven't verified exist. When uncertain about file contents or symbol locations, Read them, don't guess from training. Treat an empty grep or glob as "search was wrong," not "doesn't exist," until you've tried other names and paths.
+- Don't use APIs, signatures, or file paths you haven't verified exist. When uncertain about file contents or symbol locations, open them, don't guess from training. Treat an empty grep or glob as "search was wrong," not "doesn't exist," until you've tried other names and paths.
 - Blocked? Stop and report what failed. Don't silently work around it.
 - Refactor: tests green before and after.
 
