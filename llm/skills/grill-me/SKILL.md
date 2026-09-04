@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: Interview the user about a plan or design. Use when the user says "grill me", "interview me", or "poke holes in my plan", or hands over a new subsystem with who, why, or the success criterion missing. Not for code review, mechanical edits, or information questions.
+description: Interview the user about a plan or design. Use when the user says "grill me", "interview me", "stress-test my thinking", or "poke holes in my plan", or hands over a new subsystem with two of who, why, and the success criterion missing. Not for code review, mechanical edits, or information questions.
 license: MIT, see LICENSE
 metadata:
   derived-from: "mattpocock/skills grilling (Matt Pocock), addyosmani/agent-skills interview-me (Addy Osmani), obra/superpowers brainstorming (Jesse Vincent), neurofoo/agent-skills socratic"
