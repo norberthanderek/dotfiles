@@ -1,4 +1,5 @@
 #Requires -RunAsAdministrator
+#Requires -Version 7.0
 $ErrorActionPreference = "Stop"
 
 # Paths
@@ -15,15 +16,27 @@ $agentsUserDir = Join-Path $env:USERPROFILE '.agents'
 function Remove-Existing {
     param([string]$Path)
 
-    if (Test-Path $Path) {
-        $item = Get-Item -LiteralPath $Path -Force
+    if ([string]::IsNullOrWhiteSpace($Path)) {
+        return
+    }
 
-        if ($item.Attributes -band [IO.FileAttributes]::ReparsePoint -and $item.LinkType -eq 'SymbolicLink') {
-            Remove-Item -LiteralPath $Path -Force -Recurse
-        } 
-        else {
-            Move-Item -LiteralPath $Path -Destination ($Path + '.old') -Force
+    # PS7 Test-Path/Get-Item inspect the reparse point itself, not its target,
+    # so dangling symlinks and junctions are returned as items.
+    $item = Get-Item -LiteralPath $Path -Force -ErrorAction SilentlyContinue
+    if (-not $item) {
+        return
+    }
+
+    if ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) {
+        # Remove-Item on a reparse point detaches the link only, never the target.
+        Remove-Item -LiteralPath $Path -Force
+    }
+    else {
+        $backup = $Path + '.old'
+        if (Test-Path -LiteralPath $backup) {
+            Remove-Item -LiteralPath $backup -Force -Recurse
         }
+        Move-Item -LiteralPath $Path -Destination $backup -Force
     }
 }
 
@@ -59,8 +72,23 @@ Set-Symlink "$scriptDir\zed\settings.json" "$zedConfigDir\settings.json"
 Set-Symlink "$scriptDir\zed\keymap.json" "$zedConfigDir\keymap.json"
 Set-Symlink "$scriptDir\zed\tasks.json" "$zedConfigDir\tasks.json"
 
+# Keep the real ~/.config/opencode directory, detach links, and move aside only a plain file.
+$openCodeUserDir = Join-Path $env:USERPROFILE '.config\opencode'
+$openCodeItem = Get-Item -LiteralPath $openCodeUserDir -Force -ErrorAction SilentlyContinue
+if ($openCodeItem -and ($openCodeItem.Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+    # Remove-Item on a reparse point detaches the link only, never the target.
+    Remove-Item -LiteralPath $openCodeUserDir -Force
+}
+elseif ($openCodeItem -and -not $openCodeItem.PSIsContainer) {
+    $backup = "$openCodeUserDir.old"
+    if (Test-Path -LiteralPath $backup) {
+        Remove-Item -LiteralPath $backup -Force -Recurse
+    }
+    Move-Item -LiteralPath $openCodeUserDir -Destination $backup -Force
+}
+
 # LLMs
-foreach ($target in "$claudeUserDir\CLAUDE.md", "$codexUserDir\AGENTS.md", "$hermesUserDir\SOUL.md") {
+foreach ($target in "$claudeUserDir\CLAUDE.md", "$codexUserDir\AGENTS.md", "$hermesUserDir\SOUL.md", "$openCodeUserDir\AGENTS.md") {
     Set-Symlink "$scriptDir\llm\SOUL.md" $target
 }
 
@@ -70,5 +98,10 @@ Set-Symlink "$scriptDir\llm\skills" "$agentsUserDir\skills"
 foreach ($skill in Get-ChildItem "$scriptDir\llm\skills" -Directory) {
     Set-Symlink $skill.FullName "$claudeUserDir\skills\$($skill.Name)"
 }
+
+# OpenCode
+Remove-Existing "$openCodeUserDir\opencode.jsonc"
+Set-Symlink "$scriptDir\llm\opencode\opencode.json" "$openCodeUserDir\opencode.json"
+Set-Symlink "$scriptDir\llm\opencode\agents" "$openCodeUserDir\agents"
 
 Write-Host "Done"

@@ -20,9 +20,9 @@ remove_existing() {
     # If it's a symlink - remove
     if [ -L "$1" ]; then
         rm "$1"
-    fi
     # If it's a file or a directory - rename
-    if [ -f "$1" ] || [ -d "$1" ]; then
+    elif [ -f "$1" ] || [ -d "$1" ]; then
+        rm -rf "$1.old"
         mv "$1" "$1.old"
     fi
 }
@@ -68,8 +68,15 @@ if [[ "$OS_NAME" == "Linux" ]]; then
     relink "$SCRIPT_DIR/tiling/wlogout" ~/.config/wlogout
 fi
 
+if [ -L ~/.config/opencode ]; then
+    rm ~/.config/opencode
+elif [ -f ~/.config/opencode ]; then
+    rm -rf ~/.config/opencode.old
+    mv ~/.config/opencode ~/.config/opencode.old
+fi
+
 # LLMs
-for target in ~/.claude/CLAUDE.md ~/.codex/AGENTS.md ~/.hermes/SOUL.md; do
+for target in ~/.claude/CLAUDE.md ~/.codex/AGENTS.md ~/.hermes/SOUL.md ~/.config/opencode/AGENTS.md; do
     relink "$SCRIPT_DIR/llm/SOUL.md" "$target"
 done
 
@@ -79,5 +86,10 @@ relink "$SCRIPT_DIR/llm/skills" ~/.agents/skills
 for skill in "$SCRIPT_DIR"/llm/skills/*/; do
     relink "${skill%/}" ~/.claude/skills/"$(basename "$skill")"
 done
+
+# OpenCode
+remove_existing ~/.config/opencode/opencode.jsonc
+relink "$SCRIPT_DIR/llm/opencode/opencode.json" ~/.config/opencode/opencode.json
+relink "$SCRIPT_DIR/llm/opencode/agents" ~/.config/opencode/agents
 
 echo "Done"

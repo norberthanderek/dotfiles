@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/z-ai/glm-5.3-flash",
+  "small_model": "openrouter/z-ai/glm-5.3-flash",
+  "default_agent": "lead",
+  "provider": {
+    "openrouter": {
+      "models": {
+        "z-ai/glm-5.3-flash": {
+          "options": {
+            "provider": {
+              "only": ["z-ai/fp8", "siliconflow/fp8", "phala/fp8", "novita/fp8", "parasail/fp8", "sail-research/fp8", "reka/fp8"],
+              "sort": "throughput",
+              "allow_fallbacks": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
