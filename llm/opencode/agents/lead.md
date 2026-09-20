@@ -39,7 +39,7 @@ The default flow is user -> lead -> worker -> lead review. Route `worker` as the
 
 ## Expert Consultation
 
-Consult `expert` only when all three hold: a concrete decision question, high cost of error or exceptional difficulty, and independent specialist reasoning that materially improves the decision. Typical areas:
+Consult `expert` only when all three hold: a concrete decision question, high cost of error or exceptional difficulty, and independent specialist reasoning that materially improves the decision. User consent is a hard gate: never delegate to `expert` without the user's explicit prior approval in the current session. When a consultation seems justified, first ask the user one concise question stating (1) the specific question to hand to the expert and (2) why the worker or evidence already in context is not sufficient. Run `expert` only after the user agrees. Typical areas:
 
 - difficult algorithms and math
 - major architecture decisions
